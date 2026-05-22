@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -87,8 +86,8 @@ export default function AboutCTA() {
           </p>
 
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link
-              href="/#newsletter"
+            <a
+              href="mailto:reach@afterninetysports.com"
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
@@ -112,7 +111,7 @@ export default function AboutCTA() {
               }
             >
               REACH OUT <span style={{ display: 'inline-block', transition: 'transform 0.25s ease' }}>→</span>
-            </Link>
+            </a>
             <a
               href="https://medium.com/@afterninetygh"
               target="_blank"

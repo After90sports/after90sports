@@ -247,7 +247,7 @@ export default function Newsletter() {
                     'var(--accent)')
                 }
               >
-                Subscribe <span className="arrow">→</span>
+                Join The Dispatch <span className="arrow">→</span>
               </button>
 
               {/* Disclaimer */}

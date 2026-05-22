@@ -191,7 +191,7 @@ function ArticleRow({
         padding: '36px 0',
         borderBottom: '1px solid rgba(255,255,255,0.08)',
         alignItems: 'start',
-        cursor: 'default',
+        cursor: 'pointer',
         transition: 'padding-left 0.3s ease',
         paddingLeft: isActive ? '24px' : '0px',
       }}

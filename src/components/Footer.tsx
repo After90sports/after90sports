@@ -5,7 +5,7 @@ import { InstagramIcon, XTwitterIcon, YouTubeIcon, TikTokIcon, MediumIcon } from
 
 const contactInfo = [
   { label: 'reach@afterninetysports.com', href: 'mailto:reach@afterninetysports.com' },
-  { label: 'Accra, Ghana', href: '#' },
+  { label: 'Accra, Ghana', href: 'https://www.google.com/maps/place/Accra,+Ghana' },
 ]
 
 const socialLinks = [

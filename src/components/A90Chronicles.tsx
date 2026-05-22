@@ -60,7 +60,7 @@ export default function A90Chronicles() {
               border: '1px solid rgba(255,255,255,0.3)',
               backdropFilter: 'blur(8px)',
               WebkitBackdropFilter: 'blur(8px)',
-              borderRadius: '100px',
+              borderRadius: '2px',
               padding: '7px 16px',
               marginBottom: '20px',
             }}
@@ -220,6 +220,7 @@ export default function A90Chronicles() {
                 style={{
                   fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '40px',
+                  fontWeight: 900,
                   lineHeight: 1,
                   color: 'var(--accent)',
                   marginBottom: '6px',

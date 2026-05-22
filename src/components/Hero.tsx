@@ -266,7 +266,7 @@ export default function Hero() {
               READ CHRONICLE <span className="arrow">→</span>
             </a>
             <a
-              href="#newsletter"
+              href="mailto:reach@afterninetysports.com"
               className="btn-arrow"
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',

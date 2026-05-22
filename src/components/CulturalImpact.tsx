@@ -13,7 +13,7 @@ export default function CulturalImpact() {
   return (
     <section
       style={{
-        padding: '140px 64px 60px',
+        padding: '140px 64px 100px',
         background: 'var(--black)',
       }}
       className="cultural-impact"

@@ -8,7 +8,7 @@ const cards = [
     image: '/PSG-88.jpg',
     objectPosition: 'center top',
     tag: 'FIFA INTERCONTINENTAL CUP',
-    title: 'Paris Saint Germain, headed to Qatar and became intercontinental champions',
+    title: 'Paris Saint-Germain: Intercontinental Champions in Qatar',
     credit: 'Husseni Shamsudeen',
     readTime: '12 min read',
     date: 'May 2026',
@@ -28,7 +28,7 @@ const cards = [
     image: '/IMG_0949A90B.jpg',
     objectPosition: 'center 30%',
     tag: 'AFRICAN ATHLETICS CHAMPIONSHIP',
-    title: 'Accra gave the world a real meaning of what African athleticism truly mean',
+    title: 'Accra and the True Meaning of African Athleticism',
     credit: 'Husseni Shamsudeen',
     readTime: '6 min read',
     date: '',
@@ -212,7 +212,7 @@ export default function Photographs() {
             color: 'var(--white)',
           }}
         >
-          Sports Events
+          Events
           <br />
           We Have Covered
         </h2>
