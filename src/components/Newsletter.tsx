@@ -56,10 +56,10 @@ export default function Newsletter() {
           <p
             className="eyebrow-line"
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
               marginBottom: '24px',
@@ -70,9 +70,9 @@ export default function Newsletter() {
 
           <h2
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(40px, 5vw, 72px)',
-              fontWeight: 400,
+              fontWeight: 900,
               lineHeight: 1.08,
               textTransform: 'uppercase',
               letterSpacing: '-1px',
@@ -95,10 +95,10 @@ export default function Newsletter() {
 
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '16px',
-              fontWeight: 300,
-              lineHeight: 1.75,
+              fontWeight: 500,
+              lineHeight: 1.5,
               color: 'rgba(245,243,238,0.55)',
               maxWidth: '400px',
             }}
@@ -124,9 +124,9 @@ export default function Newsletter() {
             >
               <p
                 style={{
-                  fontFamily: 'var(--font-oswald), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '32px',
-                  fontWeight: 400,
+                  fontWeight: 500,
                   textTransform: 'uppercase',
                   color: 'var(--accent)',
                   marginBottom: '12px',
@@ -136,9 +136,9 @@ export default function Newsletter() {
               </p>
               <p
                 style={{
-                  fontFamily: 'var(--font-barlow), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '14px',
-                  fontWeight: 300,
+                  fontWeight: 500,
                   color: 'rgba(245,243,238,0.5)',
                 }}
               >
@@ -162,9 +162,9 @@ export default function Newsletter() {
                     border: 'none',
                     borderBottom: '1px solid rgba(255,255,255,0.15)',
                     padding: '12px 0',
-                    fontFamily: 'var(--font-barlow), sans-serif',
+                    fontFamily: 'var(--font-inter), sans-serif',
                     fontSize: '16px',
-                    fontWeight: 300,
+                    fontWeight: 500,
                     color: 'var(--white)',
                     outline: 'none',
                     transition: 'border-color 0.2s ease',
@@ -196,9 +196,9 @@ export default function Newsletter() {
                     border: 'none',
                     borderBottom: '1px solid rgba(255,255,255,0.15)',
                     padding: '12px 0',
-                    fontFamily: 'var(--font-barlow), sans-serif',
+                    fontFamily: 'var(--font-inter), sans-serif',
                     fontSize: '16px',
-                    fontWeight: 300,
+                    fontWeight: 500,
                     color: 'var(--white)',
                     outline: 'none',
                     transition: 'border-color 0.2s ease',
@@ -224,10 +224,10 @@ export default function Newsletter() {
                   color: 'var(--black)',
                   border: 'none',
                   padding: '16px 28px',
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '14px',
-                  fontWeight: 700,
-                  letterSpacing: '2.5px',
+                  fontWeight: 900,
+                  letterSpacing: '0.4px',
                   textTransform: 'uppercase',
                   cursor: 'pointer',
                   borderRadius: '2px',
@@ -253,9 +253,9 @@ export default function Newsletter() {
               {/* Disclaimer */}
               <p
                 style={{
-                  fontFamily: 'var(--font-barlow), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '12px',
-                  fontWeight: 300,
+                  fontWeight: 500,
                   color: 'rgba(245,243,238,0.35)',
                   textAlign: 'center',
                 }}

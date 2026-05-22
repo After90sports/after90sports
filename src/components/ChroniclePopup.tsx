@@ -128,10 +128,10 @@ export default function ChroniclePopup({
         >
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '10px',
-              fontWeight: 700,
-              letterSpacing: '2px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
               border: '1px solid rgba(155,222,28,0.3)',
@@ -143,9 +143,9 @@ export default function ChroniclePopup({
           </span>
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '10px',
-              letterSpacing: '1.5px',
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'rgba(245,243,238,0.35)',
             }}
@@ -157,9 +157,9 @@ export default function ChroniclePopup({
         {/* Title */}
         <h4
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '18px',
-            fontWeight: 500,
+            fontWeight: 700,
             lineHeight: 1.2,
             textTransform: 'uppercase',
             letterSpacing: '-0.3px',
@@ -173,10 +173,10 @@ export default function ChroniclePopup({
         {/* Excerpt */}
         <p
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '13px',
-            fontWeight: 300,
-            lineHeight: 1.65,
+            fontWeight: 500,
+            lineHeight: 1.5,
             color: 'rgba(245,243,238,0.55)',
             display: '-webkit-box',
             WebkitLineClamp: 4,
@@ -200,10 +200,10 @@ export default function ChroniclePopup({
         >
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '1.5px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'rgba(245,243,238,0.3)',
             }}
@@ -216,10 +216,10 @@ export default function ChroniclePopup({
             rel="noopener noreferrer"
             className="btn-arrow"
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '1.5px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
               display: 'flex',

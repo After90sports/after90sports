@@ -48,10 +48,10 @@ export default function VideoCarousel() {
           <p
             className="eyebrow-line"
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
               marginBottom: '16px',
@@ -61,9 +61,9 @@ export default function VideoCarousel() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(32px, 4vw, 56px)',
-              fontWeight: 400,
+              fontWeight: 900,
               lineHeight: 1.1,
               textTransform: 'uppercase',
               letterSpacing: '-0.5px',
@@ -81,10 +81,10 @@ export default function VideoCarousel() {
           rel="noopener noreferrer"
           className="btn-arrow"
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '12px',
-            fontWeight: 600,
-            letterSpacing: '2px',
+            fontWeight: 900,
+            letterSpacing: '0.3px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
             display: 'flex',

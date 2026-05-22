@@ -1,32 +1,11 @@
 import type { Metadata, Viewport } from 'next'
-import { Oswald, Barlow, Barlow_Condensed, League_Gothic } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
-const oswald = Oswald({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-oswald',
-  display: 'swap',
-})
-
-const barlow = Barlow({
-  subsets: ['latin'],
-  weight: ['300', '400', '600', '700'],
-  variable: '--font-barlow',
-  display: 'swap',
-})
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-barlow-condensed',
-  display: 'swap',
-})
-
-const leagueGothic = League_Gothic({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-league-gothic',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
   display: 'swap',
 })
 
@@ -82,10 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="en"
-      className={`${oswald.variable} ${barlow.variable} ${barlowCondensed.variable} ${leagueGothic.variable}`}
-    >
+    <html lang="en" className={inter.variable}>
       <body>{children}</body>
     </html>
   )

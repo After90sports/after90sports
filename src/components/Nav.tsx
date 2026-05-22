@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -37,18 +38,15 @@ export default function Nav() {
       }}
     >
       {/* Logo */}
-      <Link
-        href="/"
-        style={{
-          fontFamily: 'var(--font-oswald), sans-serif',
-          fontSize: '26px',
-          fontWeight: 600,
-          letterSpacing: '-0.5px',
-          color: 'var(--white)',
-          textTransform: 'uppercase',
-        }}
-      >
-        After<span style={{ color: 'var(--accent)' }}>90</span>
+      <Link href="/" style={{ display: 'inline-flex', alignItems: 'center' }}>
+        <Image
+          src="/images/after90-icon.png"
+          alt="After90"
+          width={160}
+          height={52}
+          style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '44px' }}
+          priority
+        />
       </Link>
 
       {/* Desktop nav links */}
@@ -67,10 +65,10 @@ export default function Nav() {
             href={item.href}
             className="nav-link"
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '13px',
-              fontWeight: 600,
-              letterSpacing: '2px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'rgba(245,243,238,0.75)',
               transition: 'color 0.2s ease',
@@ -92,10 +90,10 @@ export default function Nav() {
           rel="noopener noreferrer"
           className="btn-arrow"
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '12px',
-            fontWeight: 700,
-            letterSpacing: '2.5px',
+            fontWeight: 900,
+            letterSpacing: '0.4px',
             textTransform: 'uppercase',
             color: 'var(--black)',
             background: 'var(--accent)',

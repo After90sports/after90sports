@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -12,15 +13,15 @@ type TeamMember = {
   socials: { label: string; href: string }[]
   glowX: string
   glowY: string
-  placeholder: boolean
+  photo: string | null
 }
 
 const team: TeamMember[] = [
   {
-    initials: 'FO',
-    role: 'Founder & Editor-in-Chief',
-    name: 'Founder Name',
-    bio: 'The visionary behind After90. A journalist and storyteller with a decade of experience covering sport across the African continent. Believes every great story starts with showing up.',
+    initials: 'HS',
+    role: 'Founder & Creative Director',
+    name: 'Husseni Shamsudeen',
+    bio: 'The eye behind the lens. A visual storyteller who built After90 from a belief that African sport deserves world-class imagery — every frame made with intent, every photo earning its place.',
     socials: [
       { label: 'Instagram', href: '#' },
       { label: 'X / Twitter', href: '#' },
@@ -28,13 +29,13 @@ const team: TeamMember[] = [
     ],
     glowX: '25%',
     glowY: '30%',
-    placeholder: true,
+    photo: '/images/team/husseni-shamsudeen.jpg',
   },
   {
-    initials: 'CF',
-    role: 'Co-Founder & Creative Director',
-    name: 'Co-Founder Name',
-    bio: 'The eye behind the lens. An award-winning sports photographer whose work has been published across major international platforms. Brings the visual soul of After90 to life.',
+    initials: 'DO',
+    role: 'Co-Founder & Editor-in-Chief',
+    name: 'Derrick Otabil',
+    bio: 'The voice behind After90. A journalist and storyteller with a sharp eye for the stories that matter — not just on the pitch, but in the lives of the athletes who define African sport.',
     socials: [
       { label: 'Instagram', href: '#' },
       { label: 'X / Twitter', href: '#' },
@@ -42,7 +43,7 @@ const team: TeamMember[] = [
     ],
     glowX: '75%',
     glowY: '40%',
-    placeholder: true,
+    photo: '/images/team/derrick-otabil.jpg',
   },
 ]
 
@@ -67,10 +68,10 @@ export default function TheTeam() {
           <span style={{ display: 'inline-block', width: '40px', height: '1px', background: 'var(--accent)' }} />
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
             }}
@@ -80,9 +81,9 @@ export default function TheTeam() {
         </div>
         <h2
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(36px, 5vw, 72px)',
-            fontWeight: 700,
+            fontWeight: 900,
             lineHeight: 1.0,
             letterSpacing: '-1.5px',
             textTransform: 'uppercase',
@@ -104,13 +105,13 @@ export default function TheTeam() {
         }}
         className="team-grid"
       >
-        {team.map((member: TeamMember, i: number) => (
+        {team.map((member: TeamMember) => (
           <motion.div
             key={member.initials}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.8, ease, delay: i * 0.12 }}
+            transition={{ duration: 0.7, ease, delay: 0 }}
             style={{
               background: 'var(--gray-800)',
               border: '1px solid rgba(255,255,255,0.06)',
@@ -119,7 +120,7 @@ export default function TheTeam() {
             }}
             className="team-card"
           >
-            {/* Photo placeholder */}
+            {/* Photo area */}
             <div
               style={{
                 position: 'relative',
@@ -128,61 +129,98 @@ export default function TheTeam() {
                 overflow: 'hidden',
               }}
             >
-              {/* Subtle gradient pattern */}
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: `
-                    radial-gradient(ellipse at ${member.glowX} ${member.glowY}, rgba(155,222,28,0.1) 0%, transparent 55%),
-                    linear-gradient(160deg, var(--gray-600) 0%, var(--gray-700) 50%, #0d0d0d 100%)
-                  `,
-                }}
-              />
-
-              {/* Initials placeholder */}
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gap: '16px',
-                }}
-              >
-                <div
-                  style={{
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '50%',
-                    border: '1px solid rgba(155,222,28,0.3)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: 'var(--font-oswald), sans-serif',
-                    fontSize: '28px',
-                    fontWeight: 600,
-                    color: 'var(--accent)',
-                    letterSpacing: '2px',
-                  }}
-                >
-                  {member.initials}
-                </div>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
-                    fontSize: '10px',
-                    fontWeight: 600,
-                    letterSpacing: '2.5px',
-                    textTransform: 'uppercase',
-                    color: 'rgba(245,243,238,0.25)',
-                  }}
-                >
-                  Photo Coming Soon
-                </span>
-              </div>
+              {member.photo ? (
+                <>
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    priority
+                    style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  {/* Bottom gradient overlay */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: '35%',
+                      background: 'linear-gradient(to top, rgba(18,18,18,0.85) 0%, transparent 100%)',
+                      zIndex: 1,
+                    }}
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Subtle gradient pattern */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: `
+                        radial-gradient(ellipse at ${member.glowX} ${member.glowY}, rgba(155,222,28,0.1) 0%, transparent 55%),
+                        linear-gradient(160deg, var(--gray-600) 0%, var(--gray-700) 50%, #0d0d0d 100%)
+                      `,
+                    }}
+                  />
+                  {/* Initials placeholder */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '16px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '80px',
+                        height: '80px',
+                        borderRadius: '50%',
+                        border: '1px solid rgba(155,222,28,0.3)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontFamily: 'var(--font-inter), sans-serif',
+                        fontSize: '28px',
+                        fontWeight: 900,
+                        color: 'var(--accent)',
+                        letterSpacing: '0.3px',
+                      }}
+                    >
+                      {member.initials}
+                    </div>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-inter), sans-serif',
+                        fontSize: '10px',
+                        fontWeight: 900,
+                        letterSpacing: '0.3px',
+                        textTransform: 'uppercase',
+                        color: 'rgba(245,243,238,0.25)',
+                      }}
+                    >
+                      Photo Coming Soon
+                    </span>
+                  </div>
+                  {/* Bottom gradient */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: '40%',
+                      background: 'linear-gradient(to top, rgba(22,22,22,0.9) 0%, transparent 100%)',
+                    }}
+                  />
+                </>
+              )}
 
               {/* Top accent bar */}
               <div
@@ -193,18 +231,7 @@ export default function TheTeam() {
                   right: 0,
                   height: '3px',
                   background: 'var(--accent)',
-                }}
-              />
-
-              {/* Bottom gradient */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: '40%',
-                  background: 'linear-gradient(to top, rgba(22,22,22,0.9) 0%, transparent 100%)',
+                  zIndex: 2,
                 }}
               />
             </div>
@@ -215,10 +242,10 @@ export default function TheTeam() {
               <span
                 style={{
                   display: 'inline-block',
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '10px',
-                  fontWeight: 700,
-                  letterSpacing: '2.5px',
+                  fontWeight: 900,
+                  letterSpacing: '0.3px',
                   textTransform: 'uppercase',
                   color: 'var(--accent)',
                   border: '1px solid rgba(155,222,28,0.25)',
@@ -233,9 +260,9 @@ export default function TheTeam() {
               {/* Name */}
               <h3
                 style={{
-                  fontFamily: 'var(--font-oswald), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: 'clamp(24px, 2.5vw, 32px)',
-                  fontWeight: 600,
+                  fontWeight: 900,
                   lineHeight: 1.05,
                   letterSpacing: '-0.5px',
                   textTransform: 'uppercase',
@@ -249,10 +276,10 @@ export default function TheTeam() {
               {/* Bio */}
               <p
                 style={{
-                  fontFamily: 'var(--font-barlow), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '14px',
-                  fontWeight: 300,
-                  lineHeight: 1.75,
+                  fontWeight: 500,
+                  lineHeight: 1.5,
                   color: 'rgba(245,243,238,0.5)',
                   marginBottom: '28px',
                 }}
@@ -276,10 +303,10 @@ export default function TheTeam() {
                     key={s.label}
                     href={s.href}
                     style={{
-                      fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                      fontFamily: 'var(--font-inter), sans-serif',
                       fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '1.5px',
+                      fontWeight: 900,
+                      letterSpacing: '0.2px',
                       textTransform: 'uppercase',
                       color: 'rgba(245,243,238,0.35)',
                       transition: 'color 0.2s ease',

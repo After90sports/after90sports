@@ -14,10 +14,10 @@
   --color-surface-400: #6B6B6B;
   --color-surface-300: #999999;
 
-  --font-display: var(--font-oswald), sans-serif;
-  --font-body: var(--font-barlow), sans-serif;
-  --font-label: var(--font-barlow-condensed), sans-serif;
-  --font-numeric: var(--font-league-gothic), sans-serif;
+  --font-display: var(--font-inter), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-label: var(--font-inter), sans-serif;
+  --font-numeric: var(--font-inter), sans-serif;
 }
 
 :root {
@@ -47,10 +47,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Remap legacy font variables → Inter */
+:root {
+  --font-oswald: var(--font-inter);
+  --font-barlow: var(--font-inter);
+  --font-barlow-condensed: var(--font-inter);
+  --font-league-gothic: var(--font-inter);
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
-  font-family: var(--font-barlow), sans-serif;
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

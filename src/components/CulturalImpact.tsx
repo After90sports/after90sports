@@ -37,9 +37,9 @@ export default function CulturalImpact() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(36px, 4.2vw, 60px)',
-            fontWeight: 400,
+            fontWeight: 900,
             lineHeight: 1.1,
             textTransform: 'uppercase',
             letterSpacing: '-0.5px',
@@ -57,10 +57,10 @@ export default function CulturalImpact() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '16px',
-            fontWeight: 300,
-            lineHeight: 1.75,
+            fontWeight: 500,
+            lineHeight: 1.5,
             color: 'rgba(245,243,238,0.6)',
           }}
         >
@@ -96,8 +96,9 @@ export default function CulturalImpact() {
           >
             <span
               style={{
-                fontFamily: 'var(--font-league-gothic), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: 'clamp(48px, 4.5vw, 72px)',
+                fontWeight: 900,
                 lineHeight: 0.95,
                 color: 'var(--white)',
                 flexShrink: 0,
@@ -108,10 +109,10 @@ export default function CulturalImpact() {
             </span>
             <span
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '2px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 maxWidth: '140px',
                 lineHeight: 1.4,
@@ -141,10 +142,10 @@ export default function CulturalImpact() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '13px',
-            fontWeight: 600,
-            letterSpacing: '2.5px',
+            fontWeight: 900,
+            letterSpacing: '0.4px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
             border: '1px solid rgba(155,222,28,0.3)',

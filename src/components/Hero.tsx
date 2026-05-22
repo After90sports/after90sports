@@ -43,6 +43,7 @@ export default function Hero() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const playerRef = useRef<any>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const coverRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // Load the IFrame API script once
@@ -71,6 +72,11 @@ export default function Hero() {
         },
         events: {
           onStateChange: (e: { data: number }) => {
+            // State 1 = playing — lift the black cover
+            if (e.data === 1 && coverRef.current) {
+              coverRef.current.style.opacity = '0'
+              coverRef.current.style.pointerEvents = 'none'
+            }
             // Restart when the video ends (state 0 = ended)
             if (e.data === 0) {
               playerRef.current?.seekTo(0, true)
@@ -131,6 +137,19 @@ export default function Hero() {
         <div style={{ position: 'absolute', inset: 0 }} />
       </div>
 
+      {/* Black cover — hides YouTube thumbnail/title until video is playing */}
+      <div
+        ref={coverRef}
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'var(--black)',
+          zIndex: 2,
+          transition: 'opacity 0.8s ease',
+          pointerEvents: 'none',
+        }}
+      />
+
       {/* Dark overlay */}
       <div
         style={{
@@ -166,10 +185,10 @@ export default function Hero() {
             <span
               className="eyebrow-line"
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '3.5px',
+                fontWeight: 900,
+                letterSpacing: '0.5px',
                 textTransform: 'uppercase',
                 color: 'var(--accent)',
               }}
@@ -183,9 +202,9 @@ export default function Hero() {
         <FadeUp delay={0.35} style={{ marginBottom: '28px' }} className="hero-headline">
           <h1
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(48px, 6vw, 96px)',
-              fontWeight: 700,
+              fontWeight: 900,
               lineHeight: 1.08,
               letterSpacing: '-1.5px',
               textTransform: 'uppercase',
@@ -202,10 +221,10 @@ export default function Hero() {
         <FadeUp delay={0.5} style={{ marginBottom: '40px' }} className="hero-sub">
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '16px',
-              fontWeight: 300,
-              lineHeight: 1.7,
+              fontWeight: 500,
+              lineHeight: 1.45,
               color: 'rgba(245,243,238,0.7)',
               maxWidth: '520px',
             }}
@@ -223,10 +242,10 @@ export default function Hero() {
               href="#photographs"
               className="btn-arrow"
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
+                fontWeight: 900,
+                letterSpacing: '0.4px',
                 textTransform: 'uppercase',
                 background: 'var(--accent)',
                 color: 'var(--black)',
@@ -250,10 +269,10 @@ export default function Hero() {
               href="#newsletter"
               className="btn-arrow"
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
+                fontWeight: 900,
+                letterSpacing: '0.4px',
                 textTransform: 'uppercase',
                 background: 'transparent',
                 color: 'var(--white)',

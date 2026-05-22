@@ -44,10 +44,10 @@ export default function OurStory() {
         <span style={{ display: 'inline-block', width: '40px', height: '1px', background: 'var(--accent)' }} />
         <span
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '11px',
-            fontWeight: 600,
-            letterSpacing: '3.5px',
+            fontWeight: 900,
+            letterSpacing: '0.2px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
           }}
@@ -80,7 +80,7 @@ export default function OurStory() {
             <div style={{ position: 'sticky', top: '120px' }}>
               <div
                 style={{
-                  fontFamily: 'var(--font-league-gothic), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: 'clamp(72px, 9vw, 128px)',
                   lineHeight: 0.9,
                   letterSpacing: '-2px',
@@ -93,9 +93,9 @@ export default function OurStory() {
 
               <h2
                 style={{
-                  fontFamily: 'var(--font-oswald), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: 'clamp(22px, 2.8vw, 36px)',
-                  fontWeight: 500,
+                  fontWeight: 900,
                   lineHeight: 1.15,
                   textTransform: 'uppercase',
                   letterSpacing: '-0.3px',
@@ -118,8 +118,9 @@ export default function OurStory() {
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-league-gothic), sans-serif',
+                    fontFamily: 'var(--font-inter), sans-serif',
                     fontSize: '48px',
+                    fontWeight: 900,
                     lineHeight: 1,
                     color: 'var(--accent)',
                     letterSpacing: '-1px',
@@ -129,10 +130,10 @@ export default function OurStory() {
                 </span>
                 <span
                   style={{
-                    fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                    fontFamily: 'var(--font-inter), sans-serif',
                     fontSize: '11px',
-                    fontWeight: 600,
-                    letterSpacing: '2px',
+                    fontWeight: 900,
+                    letterSpacing: '0.2px',
                     textTransform: 'uppercase',
                     color: 'rgba(245,243,238,0.4)',
                   }}
@@ -148,10 +149,10 @@ export default function OurStory() {
                 <p
                   key={j}
                   style={{
-                    fontFamily: 'var(--font-barlow), sans-serif',
+                    fontFamily: 'var(--font-inter), sans-serif',
                     fontSize: '17px',
-                    fontWeight: 300,
-                    lineHeight: 1.85,
+                    fontWeight: 500,
+                    lineHeight: 1.5,
                     color: 'rgba(245,243,238,0.65)',
                     marginBottom: j < ch.body.split('\n\n').length - 1 ? '28px' : 0,
                   }}

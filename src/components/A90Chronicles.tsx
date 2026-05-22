@@ -75,10 +75,10 @@ export default function A90Chronicles() {
             </svg>
             <span
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '2px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 color: 'var(--white)',
               }}
@@ -89,9 +89,9 @@ export default function A90Chronicles() {
 
           <h2
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(56px, 6.5vw, 96px)',
-              fontWeight: 700,
+              fontWeight: 900,
               lineHeight: 1.05,
               letterSpacing: '-2px',
               textTransform: 'uppercase',
@@ -104,10 +104,10 @@ export default function A90Chronicles() {
 
           <p
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '14px',
-              fontWeight: 400,
-              letterSpacing: '3px',
+              fontWeight: 500,
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               color: 'rgba(245,243,238,0.55)',
             }}
@@ -136,10 +136,10 @@ export default function A90Chronicles() {
         <p
           className="eyebrow-line"
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '11px',
-            fontWeight: 600,
-            letterSpacing: '3.5px',
+            fontWeight: 900,
+            letterSpacing: '0.5px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
             marginBottom: '24px',
@@ -151,9 +151,9 @@ export default function A90Chronicles() {
         {/* Title */}
         <h3
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(28px, 3vw, 44px)',
-            fontWeight: 500,
+            fontWeight: 900,
             lineHeight: 1.15,
             textTransform: 'uppercase',
             letterSpacing: '-0.5px',
@@ -167,11 +167,11 @@ export default function A90Chronicles() {
         {/* Quote */}
         <blockquote
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '17px',
             fontStyle: 'italic',
-            fontWeight: 300,
-            lineHeight: 1.7,
+            fontWeight: 500,
+            lineHeight: 1.45,
             color: 'rgba(245,243,238,0.75)',
             borderLeft: '2px solid var(--accent)',
             paddingLeft: '28px',
@@ -185,10 +185,10 @@ export default function A90Chronicles() {
         {/* Body */}
         <p
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '15px',
-            fontWeight: 300,
-            lineHeight: 1.75,
+            fontWeight: 500,
+            lineHeight: 1.5,
             color: 'rgba(245,243,238,0.6)',
             marginBottom: '48px',
           }}
@@ -218,7 +218,7 @@ export default function A90Chronicles() {
             <div key={s.label}>
               <div
                 style={{
-                  fontFamily: 'var(--font-league-gothic), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '40px',
                   lineHeight: 1,
                   color: 'var(--accent)',
@@ -230,10 +230,10 @@ export default function A90Chronicles() {
               </div>
               <div
                 style={{
-                  fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                  fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '11px',
-                  fontWeight: 600,
-                  letterSpacing: '2px',
+                  fontWeight: 900,
+                  letterSpacing: '0.3px',
                   textTransform: 'uppercase',
                   color: 'rgba(245,243,238,0.45)',
                 }}
@@ -254,10 +254,10 @@ export default function A90Chronicles() {
             display: 'inline-flex',
             alignItems: 'center',
             gap: '10px',
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '13px',
-            fontWeight: 700,
-            letterSpacing: '2.5px',
+            fontWeight: 900,
+            letterSpacing: '0.4px',
             textTransform: 'uppercase',
             background: 'var(--accent)',
             color: 'var(--black)',

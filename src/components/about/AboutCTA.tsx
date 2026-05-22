@@ -37,9 +37,9 @@ export default function AboutCTA() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontFamily: 'var(--font-oswald), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: 'clamp(100px, 18vw, 260px)',
-          fontWeight: 700,
+          fontWeight: 900,
           textTransform: 'uppercase',
           letterSpacing: '-6px',
           color: 'rgba(255,255,255,0.025)',
@@ -63,10 +63,10 @@ export default function AboutCTA() {
             <span style={{ display: 'inline-block', width: '32px', height: '1px', background: 'var(--accent)' }} />
             <span
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '11px',
-                fontWeight: 600,
-                letterSpacing: '3.5px',
+                fontWeight: 900,
+                letterSpacing: '0.2px',
                 textTransform: 'uppercase',
                 color: 'var(--accent)',
               }}
@@ -78,9 +78,9 @@ export default function AboutCTA() {
 
           <h2
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(40px, 6vw, 88px)',
-              fontWeight: 700,
+              fontWeight: 900,
               lineHeight: 1.0,
               letterSpacing: '-2px',
               textTransform: 'uppercase',
@@ -95,10 +95,10 @@ export default function AboutCTA() {
 
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '17px',
-              fontWeight: 300,
-              lineHeight: 1.75,
+              fontWeight: 500,
+              lineHeight: 1.5,
               color: 'rgba(245,243,238,0.55)',
               marginBottom: '48px',
             }}
@@ -112,10 +112,10 @@ export default function AboutCTA() {
             <Link
               href="/#newsletter"
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 background: 'var(--accent)',
                 color: 'var(--black)',
@@ -140,10 +140,10 @@ export default function AboutCTA() {
               target="_blank"
               rel="noopener noreferrer"
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
-                fontWeight: 700,
-                letterSpacing: '2.5px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 background: 'transparent',
                 color: 'var(--white)',

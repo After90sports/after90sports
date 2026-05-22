@@ -26,9 +26,9 @@ export default function AboutHero() {
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)',
-          fontFamily: 'var(--font-oswald), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: 'clamp(120px, 22vw, 320px)',
-          fontWeight: 700,
+          fontWeight: 900,
           textTransform: 'uppercase',
           letterSpacing: '-8px',
           color: 'rgba(255,255,255,0.03)',
@@ -71,17 +71,17 @@ export default function AboutHero() {
         className="hero-corner-stamp"
       >
         <span style={{
-          fontFamily: 'var(--font-league-gothic), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '72px',
           lineHeight: 1,
           letterSpacing: '-2px',
           color: 'rgba(155,222,28,0.12)',
         }}>2024</span>
         <span style={{
-          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '10px',
-          fontWeight: 600,
-          letterSpacing: '3px',
+          fontWeight: 900,
+          letterSpacing: '0.3px',
           textTransform: 'uppercase',
           color: 'rgba(245,243,238,0.2)',
         }}>Est. Ghana</span>
@@ -105,10 +105,10 @@ export default function AboutHero() {
         className="hero-side-label"
       >
         <span style={{
-          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '10px',
-          fontWeight: 600,
-          letterSpacing: '3px',
+          fontWeight: 900,
+          letterSpacing: '0.3px',
           textTransform: 'uppercase',
           color: 'rgba(245,243,238,0.15)',
         }}>afterninetysports.com</span>
@@ -137,10 +137,10 @@ export default function AboutHero() {
           />
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.3px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
             }}
@@ -155,9 +155,9 @@ export default function AboutHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease, delay: 0.35 }}
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(52px, 7.5vw, 120px)',
-            fontWeight: 700,
+            fontWeight: 900,
             lineHeight: 1.0,
             letterSpacing: '-2px',
             textTransform: 'uppercase',
@@ -187,10 +187,10 @@ export default function AboutHero() {
         >
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '17px',
-              fontWeight: 300,
-              lineHeight: 1.75,
+              fontWeight: 500,
+              lineHeight: 1.5,
               color: 'rgba(245,243,238,0.6)',
               maxWidth: '480px',
             }}
@@ -213,10 +213,10 @@ export default function AboutHero() {
           >
             <span
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '10px',
-                fontWeight: 600,
-                letterSpacing: '3px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 color: 'rgba(245,243,238,0.3)',
                 writingMode: 'vertical-rl',

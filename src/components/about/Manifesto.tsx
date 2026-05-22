@@ -23,7 +23,7 @@ export default function Manifesto() {
           right: '-2%',
           top: '50%',
           transform: 'translateY(-50%)',
-          fontFamily: 'var(--font-league-gothic), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: 'clamp(200px, 30vw, 420px)',
           lineHeight: 1,
           color: 'rgba(255,255,255,0.025)',
@@ -46,10 +46,10 @@ export default function Manifesto() {
           <span style={{ display: 'inline-block', width: '40px', height: '1px', background: 'var(--accent)' }} />
           <span
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.2px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
             }}
@@ -68,9 +68,9 @@ export default function Manifesto() {
         >
           <p
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(28px, 3.8vw, 54px)',
-              fontWeight: 400,
+              fontWeight: 700,
               lineHeight: 1.2,
               letterSpacing: '-0.5px',
               textTransform: 'uppercase',
@@ -104,10 +104,10 @@ export default function Manifesto() {
         >
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '16px',
-              fontWeight: 300,
-              lineHeight: 1.8,
+              fontWeight: 500,
+              lineHeight: 1.5,
               color: 'rgba(245,243,238,0.55)',
             }}
           >
@@ -117,10 +117,10 @@ export default function Manifesto() {
           </p>
           <p
             style={{
-              fontFamily: 'var(--font-barlow), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '16px',
-              fontWeight: 300,
-              lineHeight: 1.8,
+              fontWeight: 500,
+              lineHeight: 1.5,
               color: 'rgba(245,243,238,0.55)',
             }}
           >

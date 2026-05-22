@@ -55,9 +55,9 @@ export default function WhatWeStandFor() {
       >
         <h2
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(36px, 5vw, 72px)',
-            fontWeight: 700,
+            fontWeight: 900,
             lineHeight: 1.0,
             letterSpacing: '-1.5px',
             textTransform: 'uppercase',
@@ -70,10 +70,10 @@ export default function WhatWeStandFor() {
         </h2>
         <p
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '16px',
-            fontWeight: 300,
-            lineHeight: 1.8,
+            fontWeight: 500,
+            lineHeight: 1.5,
             color: 'rgba(245,243,238,0.5)',
           }}
         >
@@ -111,7 +111,7 @@ export default function WhatWeStandFor() {
             {/* Number */}
             <span
               style={{
-                fontFamily: 'var(--font-league-gothic), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '40px',
                 lineHeight: 1,
                 color: 'rgba(155,222,28,0.3)',
@@ -126,9 +126,9 @@ export default function WhatWeStandFor() {
             {/* Title */}
             <h3
               style={{
-                fontFamily: 'var(--font-oswald), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: 'clamp(20px, 2.2vw, 28px)',
-                fontWeight: 500,
+                fontWeight: 900,
                 lineHeight: 1.1,
                 textTransform: 'uppercase',
                 letterSpacing: '-0.3px',
@@ -141,10 +141,10 @@ export default function WhatWeStandFor() {
             {/* Body */}
             <p
               style={{
-                fontFamily: 'var(--font-barlow), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '14px',
-                fontWeight: 300,
-                lineHeight: 1.75,
+                fontWeight: 500,
+                lineHeight: 1.5,
                 color: 'rgba(245,243,238,0.5)',
               }}
             >

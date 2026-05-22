@@ -109,10 +109,10 @@ function PhotoCard({
         <span
           style={{
             display: 'inline-block',
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '10px',
-            fontWeight: 600,
-            letterSpacing: '2.5px',
+            fontWeight: 900,
+            letterSpacing: '0.4px',
             textTransform: 'uppercase',
             color: 'rgba(245,243,238,0.9)',
             border: '1px solid rgba(255,255,255,0.3)',
@@ -129,9 +129,9 @@ function PhotoCard({
         {/* Title */}
         <h3
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '22px',
-            fontWeight: 500,
+            fontWeight: 700,
             lineHeight: 1.15,
             textTransform: 'uppercase',
             color: 'var(--white)',
@@ -144,9 +144,9 @@ function PhotoCard({
         {/* Meta */}
         <div
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '11px',
-            letterSpacing: '1.5px',
+            letterSpacing: '0.3px',
             textTransform: 'uppercase',
             color: 'rgba(245,243,238,0.45)',
             display: 'flex',
@@ -190,10 +190,10 @@ export default function Photographs() {
         <p
           className="eyebrow-line"
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '11px',
-            fontWeight: 600,
-            letterSpacing: '3.5px',
+            fontWeight: 900,
+            letterSpacing: '0.5px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
             marginBottom: '16px',
@@ -203,9 +203,9 @@ export default function Photographs() {
         </p>
         <h2
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: 'clamp(32px, 4vw, 56px)',
-            fontWeight: 400,
+            fontWeight: 900,
             lineHeight: 1.1,
             textTransform: 'uppercase',
             letterSpacing: '-0.5px',

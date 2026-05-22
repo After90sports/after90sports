@@ -33,10 +33,10 @@ export default function Ticker() {
           >
             <span
               style={{
-                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '13px',
-                fontWeight: 600,
-                letterSpacing: '2px',
+                fontWeight: 900,
+                letterSpacing: '0.3px',
                 textTransform: 'uppercase',
                 color: 'var(--black)',
                 padding: '0 28px',

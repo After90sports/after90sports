@@ -56,10 +56,10 @@ export default function LatestChronicles() {
           <p
             className="eyebrow-line"
             style={{
-              fontFamily: 'var(--font-barlow-condensed), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: '11px',
-              fontWeight: 600,
-              letterSpacing: '3.5px',
+              fontWeight: 900,
+              letterSpacing: '0.5px',
               textTransform: 'uppercase',
               color: 'var(--accent)',
               marginBottom: '16px',
@@ -69,9 +69,9 @@ export default function LatestChronicles() {
           </p>
           <h2
             style={{
-              fontFamily: 'var(--font-oswald), sans-serif',
+              fontFamily: 'var(--font-inter), sans-serif',
               fontSize: 'clamp(32px, 4vw, 56px)',
-              fontWeight: 400,
+              fontWeight: 900,
               lineHeight: 1.1,
               textTransform: 'uppercase',
               letterSpacing: '-0.5px',
@@ -87,10 +87,10 @@ export default function LatestChronicles() {
           rel="noopener noreferrer"
           className="btn-arrow"
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '12px',
-            fontWeight: 600,
-            letterSpacing: '2px',
+            fontWeight: 900,
+            letterSpacing: '0.3px',
             textTransform: 'uppercase',
             color: 'var(--accent)',
             display: 'flex',
@@ -191,7 +191,7 @@ function ArticleRow({
       {/* Number */}
       <span
         style={{
-          fontFamily: 'var(--font-league-gothic), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '32px',
           lineHeight: 1,
           color: isActive ? 'var(--accent)' : 'rgba(245,243,238,0.3)',
@@ -207,9 +207,9 @@ function ArticleRow({
       <div>
         <h3
           style={{
-            fontFamily: 'var(--font-oswald), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '20px',
-            fontWeight: 500,
+            fontWeight: 700,
             lineHeight: 1.2,
             textTransform: 'uppercase',
             letterSpacing: '-0.2px',
@@ -222,10 +222,10 @@ function ArticleRow({
         </h3>
         <p
           style={{
-            fontFamily: 'var(--font-barlow), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '13px',
-            fontWeight: 300,
-            lineHeight: 1.65,
+            fontWeight: 500,
+            lineHeight: 1.5,
             color: 'rgba(245,243,238,0.5)',
             maxWidth: '540px',
           }}
@@ -238,10 +238,10 @@ function ArticleRow({
       <span
         className="article-tag"
         style={{
-          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '10px',
-          fontWeight: 700,
-          letterSpacing: '2px',
+          fontWeight: 900,
+          letterSpacing: '0.3px',
           textTransform: 'uppercase',
           color: 'var(--accent)',
           border: '1px solid rgba(155,222,28,0.3)',
@@ -269,9 +269,9 @@ function ArticleRow({
       >
         <span
           style={{
-            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '11px',
-            letterSpacing: '1.5px',
+            letterSpacing: '0.3px',
             textTransform: 'uppercase',
             color: 'rgba(245,243,238,0.35)',
             whiteSpace: 'nowrap',
