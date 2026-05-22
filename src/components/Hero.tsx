@@ -229,7 +229,7 @@ export default function Hero() {
               maxWidth: '520px',
             }}
           >
-            After90 is a digital sports magazine dedicated to the culture,
+            After90 is a sports digital magazine exploring the culture,
             stories, and passion that live beyond the game — bringing fans
             closer to sport through premium storytelling and fresh perspectives.
           </p>

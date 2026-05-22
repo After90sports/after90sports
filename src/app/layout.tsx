@@ -17,10 +17,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'After90 — The Digital Sports Magazine',
   description:
-    'After90 is a digital sports magazine dedicated to the culture, stories, and passion that live beyond the game. Premium sports storytelling from Africa and beyond.',
+    'After90 is a sports digital magazine exploring the culture, stories, and passion that live beyond the game — bringing fans closer to sport through premium storytelling and fresh perspectives.',
   keywords: [
-    'sports magazine', 'African sports', 'football culture', 'sports storytelling',
-    'After90', 'sports journalism', 'Ghana football', 'athletics',
+    'sports magazine', 'African sports', 'sports culture', 'sports storytelling',
+    'After90', 'athlete stories', 'Ghana football', 'athletics', 'digital sports magazine',
   ],
   authors: [{ name: 'After90 Magazine' }],
   creator: 'After90 Magazine',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'After90 — The Digital Sports Magazine',
     description:
-      'Premium sports storytelling from Africa and beyond. Culture, tactics, stories, and the love of the game.',
+      'The culture, stories, and passion that live beyond the game. African sport told with depth, integrity, and fresh perspective.',
     type: 'website',
     url: 'https://afterninetysports.com',
     siteName: 'After90 Magazine',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'After90 — The Digital Sports Magazine',
     description:
-      'Premium sports storytelling from Africa and beyond.',
+      "Sport doesn't end when the clock does. After90 celebrates the culture, stories, and energy that live beyond the game.",
     creator: '@after90sports',
     images: ['/IMG_0949A90B.jpg'],
   },

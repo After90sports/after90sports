@@ -103,8 +103,8 @@ export default function Newsletter() {
               maxWidth: '400px',
             }}
           >
-            Get After90&apos;s best writing, photo essays, and chronicles delivered
-            to your inbox monthly. No noise, just the stories that matter.
+            Stay close to the stories, culture, and moments that live beyond
+            the game — delivered to your inbox monthly.
           </p>
         </motion.div>
 

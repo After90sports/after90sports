@@ -64,9 +64,9 @@ export default function CulturalImpact() {
             color: 'rgba(245,243,238,0.6)',
           }}
         >
-          After90 is built as a living experience — bringing together thinkers,
-          creators, and communities to exchange ideas, challenge perspectives,
-          and spark new ways of seeing sport and culture in Africa and beyond.
+          After90 exists where sport meets culture — documenting the athletes,
+          stories, and communities that define African sport and take it
+          to the world.
         </motion.p>
       </div>
 

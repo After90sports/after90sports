@@ -1,12 +1,16 @@
 const items = [
-  'Champions League Final',
-  'Transfer Window Breakdown',
-  'Player Profiles',
-  'Tactical Analysis',
-  'Rising Stars',
+  'Athlete Stories',
+  'Sports Culture',
+  'A90 VRs Pro',
+  'Roots by A90',
+  'Photo Essays',
+  'Rapid90',
+  'African Sport',
+  'Guess The Jam',
+  'Long-Form Writing',
+  'Perspective Series',
   'Deep Dives',
-  'Culture & Football',
-  'Behind the Scenes',
+  'Behind the Story',
 ]
 
 export default function Ticker() {
