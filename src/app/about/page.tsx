@@ -20,6 +20,18 @@ export const metadata: Metadata = {
     description:
       'Meet the minds behind After90. Our story, our mission, and what we stand for.',
     url: 'https://afterninetysports.com/about',
+    images: [
+      {
+        url: '/IMG_0065.jpg',
+        width: 2604,
+        height: 3539,
+        alt: 'After90 Magazine — the team behind the storytelling',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/IMG_0065.jpg'],
   },
 }
 

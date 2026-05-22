@@ -36,13 +36,22 @@ export const metadata: Metadata = {
     url: 'https://afterninetysports.com',
     siteName: 'After90 Magazine',
     locale: 'en_US',
+    images: [
+      {
+        url: '/IMG_0949A90B.jpg',
+        width: 2400,
+        height: 1600,
+        alt: 'After90 Magazine — African sports photography',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'After90 — The Digital Sports Magazine',
     description:
       'Premium sports storytelling from Africa and beyond.',
-    creator: '@after90',
+    creator: '@after90sports',
+    images: ['/IMG_0949A90B.jpg'],
   },
   robots: {
     index: true,

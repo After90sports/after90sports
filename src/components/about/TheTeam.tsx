@@ -10,7 +10,6 @@ type TeamMember = {
   role: string
   name: string
   bio: string
-  socials: { label: string; href: string }[]
   glowX: string
   glowY: string
   photo: string | null
@@ -22,11 +21,6 @@ const team: TeamMember[] = [
     role: 'Founder & Creative Director',
     name: 'Husseni Shamsudeen',
     bio: 'The eye behind the lens. A visual storyteller who built After90 from a belief that African sport deserves world-class imagery — every frame made with intent, every photo earning its place.',
-    socials: [
-      { label: 'Instagram', href: '#' },
-      { label: 'X / Twitter', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-    ],
     glowX: '25%',
     glowY: '30%',
     photo: '/images/team/husseni-shamsudeen.jpg',
@@ -36,11 +30,6 @@ const team: TeamMember[] = [
     role: 'Co-Founder & Editor-in-Chief',
     name: 'Derrick Otabil',
     bio: 'The voice behind After90. A journalist and storyteller with a sharp eye for the stories that matter — not just on the pitch, but in the lives of the athletes who define African sport.',
-    socials: [
-      { label: 'Instagram', href: '#' },
-      { label: 'X / Twitter', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-    ],
     glowX: '75%',
     glowY: '40%',
     photo: '/images/team/derrick-otabil.jpg',
@@ -287,42 +276,6 @@ export default function TheTeam() {
                 {member.bio}
               </p>
 
-              {/* Divider */}
-              <div
-                style={{
-                  height: '1px',
-                  background: 'rgba(255,255,255,0.07)',
-                  marginBottom: '20px',
-                }}
-              />
-
-              {/* Socials */}
-              <div style={{ display: 'flex', gap: '20px' }}>
-                {member.socials.map((s) => (
-                  <a
-                    key={s.label}
-                    href={s.href}
-                    style={{
-                      fontFamily: 'var(--font-inter), sans-serif',
-                      fontSize: '11px',
-                      fontWeight: 900,
-                      letterSpacing: '0.2px',
-                      textTransform: 'uppercase',
-                      color: 'rgba(245,243,238,0.35)',
-                      transition: 'color 0.2s ease',
-                    }}
-                    onMouseEnter={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.color = 'var(--accent)')
-                    }
-                    onMouseLeave={(e) =>
-                      ((e.currentTarget as HTMLAnchorElement).style.color =
-                        'rgba(245,243,238,0.35)')
-                    }
-                  >
-                    {s.label}
-                  </a>
-                ))}
-              </div>
             </div>
           </motion.div>
         ))}
