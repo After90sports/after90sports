@@ -135,6 +135,11 @@ export default function LatestChronicles() {
           .chronicles-list { padding: 80px 24px !important; }
           .chronicles-header { flex-direction: column; align-items: flex-start; gap: 24px; }
         }
+        @media (max-width: 640px) {
+          .chronicles-list { padding: 60px 16px !important; }
+          .article-row { grid-template-columns: auto 1fr !important; gap: 14px !important; padding: 24px 0 !important; }
+          .article-tag, .article-date { display: none !important; }
+        }
       `}</style>
     </section>
   )
@@ -231,6 +236,7 @@ function ArticleRow({
 
       {/* Tag */}
       <span
+        className="article-tag"
         style={{
           fontFamily: 'var(--font-barlow-condensed), sans-serif',
           fontSize: '10px',
@@ -251,6 +257,7 @@ function ArticleRow({
 
       {/* Date + arrow */}
       <div
+        className="article-date"
         style={{
           display: 'flex',
           flexDirection: 'column',

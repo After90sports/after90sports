@@ -165,7 +165,8 @@ export default function Footer() {
           .footer-grid > div:first-child { grid-column: 1 / -1; }
         }
         @media (max-width: 640px) {
-          .footer-grid { grid-template-columns: 1fr !important; }
+          .footer { padding: 48px 16px 32px !important; }
+          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
         }
       `}</style>
     </footer>

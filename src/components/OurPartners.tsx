@@ -97,7 +97,8 @@ export default function OurPartners() {
           .partners-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 640px) {
-          .partners-grid { grid-template-columns: 1fr !important; }
+          .partners-section { padding: 60px 16px !important; }
+          .partners-grid { grid-template-columns: 1fr 1fr !important; }
         }
       `}</style>
     </section>

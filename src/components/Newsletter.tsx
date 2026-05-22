@@ -268,6 +268,10 @@ export default function Newsletter() {
           .newsletter-section { padding: 80px 24px !important; }
           .newsletter-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
         }
+        @media (max-width: 640px) {
+          .newsletter-section { padding: 60px 16px !important; }
+          .newsletter-grid { gap: 36px !important; }
+        }
       `}</style>
     </section>
   )

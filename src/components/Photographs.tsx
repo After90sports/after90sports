@@ -236,6 +236,9 @@ export default function Photographs() {
           .photos-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
           .photos-grid > div:first-child { grid-row: auto !important; }
         }
+        @media (max-width: 640px) {
+          .photographs-section { padding: 60px 16px !important; }
+        }
       `}</style>
     </section>
   )
