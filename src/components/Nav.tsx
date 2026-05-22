@@ -60,7 +60,7 @@ export default function Nav() {
           { label: 'Photographs', href: '#photographs' },
           { label: 'A90Chronicles', href: '#a90chronicles' },
           { label: 'Our Partners', href: '#editions' },
-          { label: 'Reach Out', href: '#newsletter' },
+          { label: 'About', href: '/about' },
         ].map((item) => (
           <a
             key={item.label}
