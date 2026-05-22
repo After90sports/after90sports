@@ -157,14 +157,17 @@ export default function OurPartners() {
       <style>{`
         .partner-cell:hover { opacity: 1 !important; }
 
+        /* Tablet */
         @media (max-width: 1024px) {
           .partners-section { padding: 36px 32px !important; }
-          .partners-row     { gap: 48px 56px !important; }
+          .partners-row     { row-gap: 40px !important; }
         }
 
+        /* Mobile — wrap to 2 × 2, cap large logos so they don't overflow */
         @media (max-width: 640px) {
-          .partners-section { padding: 32px 20px !important; }
-          .partners-row     { gap: 40px 48px !important; }
+          .partners-section  { padding: 32px 20px !important; }
+          .partners-row      { row-gap: 36px !important; justify-content: space-around !important; }
+          .partner-cell img  { max-height: 80px !important; }
         }
       `}</style>
     </section>

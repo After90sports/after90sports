@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { chronicles, Chronicle } from '@/lib/chronicles'
 import ChroniclePopup from './ChroniclePopup'
@@ -8,7 +8,16 @@ import ChroniclePopup from './ChroniclePopup'
 export default function LatestChronicles() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [anchorRect, setAnchorRect] = useState<DOMRect | null>(null)
+  const [isWideEnough, setIsWideEnough] = useState(false)
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Only show hover popup on viewports wide enough to fit the 380 px panel
+  useEffect(() => {
+    const check = () => setIsWideEnough(window.innerWidth >= 768)
+    check()
+    window.addEventListener('resize', check, { passive: true })
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   const openPopup = useCallback((i: number, rect: DOMRect) => {
     if (closeTimer.current) clearTimeout(closeTimer.current)
@@ -119,8 +128,8 @@ export default function LatestChronicles() {
         ))}
       </div>
 
-      {/* Popup */}
-      {activeIndex !== null && chronicles[activeIndex] && (
+      {/* Popup — desktop only (requires hover; 380 px panel overflows on narrow screens) */}
+      {isWideEnough && activeIndex !== null && chronicles[activeIndex] && (
         <ChroniclePopup
           chronicle={chronicles[activeIndex]}
           anchorRect={anchorRect}
