@@ -89,9 +89,6 @@ export default function CulturalImpact() {
               display: 'flex',
               alignItems: 'center',
               gap: '20px',
-              borderRight:
-                i < stats.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
-              padding: '0 32px 0 0',
             }}
           >
             <span
@@ -149,7 +146,7 @@ export default function CulturalImpact() {
             textTransform: 'uppercase',
             color: 'var(--accent)',
             border: '1px solid rgba(155,222,28,0.3)',
-            borderRadius: '100px',
+            borderRadius: '2px',
             padding: '14px 36px',
             background: 'transparent',
             transition: 'background 0.2s ease, border-color 0.2s ease',
@@ -174,14 +171,11 @@ export default function CulturalImpact() {
           .cultural-impact { padding: 80px 24px 48px !important; }
           .impact-header { grid-template-columns: 1fr !important; gap: 32px !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
-          .stats-grid > div { border-right: none !important; padding: 0 !important; }
-          .stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; padding-right: 24px !important; }
         }
         @media (max-width: 640px) {
           .cultural-impact { padding: 60px 16px 40px !important; }
           .impact-header { padding-bottom: 40px !important; margin-bottom: 40px !important; }
           .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
-          .stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; padding-right: 16px !important; }
         }
       `}</style>
     </section>

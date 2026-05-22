@@ -29,28 +29,6 @@ export default function AboutCTA() {
         }}
       />
 
-      {/* Large background text */}
-      <div
-        aria-hidden="true"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          fontFamily: 'var(--font-inter), sans-serif',
-          fontSize: 'clamp(100px, 18vw, 260px)',
-          fontWeight: 900,
-          textTransform: 'uppercase',
-          letterSpacing: '-6px',
-          color: 'rgba(255,255,255,0.025)',
-          whiteSpace: 'nowrap',
-          userSelect: 'none',
-          pointerEvents: 'none',
-          lineHeight: 1,
-        }}
-      >
-        JOIN US
-      </div>
 
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '720px', margin: '0 auto' }}>
         <motion.div
