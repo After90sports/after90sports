@@ -252,7 +252,7 @@ export default function VideoCarousel() {
       <style>{`
         @media (max-width: 1024px) {
           .video-section { padding: 80px 0 80px 24px !important; }
-          .video-header { padding-right: 24px !important; flex-direction: column; align-items: flex-start; gap: 24px; }
+          .video-header { padding-right: 24px !important; flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }
           .video-controls { padding-right: 24px !important; }
         }
         @media (max-width: 640px) {

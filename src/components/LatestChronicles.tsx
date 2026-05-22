@@ -133,7 +133,7 @@ export default function LatestChronicles() {
       <style>{`
         @media (max-width: 1024px) {
           .chronicles-list { padding: 80px 24px !important; }
-          .chronicles-header { flex-direction: column; align-items: flex-start; gap: 24px; }
+          .chronicles-header { flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }
         }
         @media (max-width: 640px) {
           .chronicles-list { padding: 60px 16px !important; }
