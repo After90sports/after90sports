@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 
 const videos = [
   {
-    src: 'https://www.youtube.com/embed/A0i8ZspYpWY?rel=0&modestbranding=1&autoplay=1&mute=1&playsinline=1&enablejsapi=1',
-    allow: 'autoplay; fullscreen; encrypted-media; picture-in-picture',
+    src: 'https://www.youtube.com/embed/A0i8ZspYpWY?si=tBMvbFqfsNYi447Q',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
   {
     src: 'https://www.youtube.com/embed/bDY7klbL2GQ?si=P2QRfMAEkAhbzBsf',
