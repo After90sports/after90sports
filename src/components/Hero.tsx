@@ -11,10 +11,12 @@ function FadeUp({
   children,
   delay = 0,
   style,
+  className,
 }: {
   children: React.ReactNode
   delay?: number
   style?: React.CSSProperties
+  className?: string
 }) {
   return (
     <motion.div
@@ -22,6 +24,7 @@ function FadeUp({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease, delay }}
       style={style}
+      className={className}
     >
       {children}
     </motion.div>
@@ -152,7 +155,7 @@ export default function Hero() {
         className="hero-content"
       >
         {/* Eyebrow */}
-        <FadeUp delay={0.2} style={{ marginBottom: '24px' }}>
+        <FadeUp delay={0.2} style={{ marginBottom: '24px' }} className="hero-eyebrow">
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <span
               className="pulse-dot"
@@ -177,7 +180,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Headline */}
-        <FadeUp delay={0.35} style={{ marginBottom: '28px' }}>
+        <FadeUp delay={0.35} style={{ marginBottom: '28px' }} className="hero-headline">
           <h1
             style={{
               fontFamily: 'var(--font-oswald), sans-serif',
@@ -196,7 +199,7 @@ export default function Hero() {
         </FadeUp>
 
         {/* Sub */}
-        <FadeUp delay={0.5} style={{ marginBottom: '40px' }}>
+        <FadeUp delay={0.5} style={{ marginBottom: '40px' }} className="hero-sub">
           <p
             style={{
               fontFamily: 'var(--font-barlow), sans-serif',
@@ -285,14 +288,17 @@ export default function Hero() {
           pointer-events: none !important;
         }
         @media (max-width: 768px) {
-          .hero-content { padding: 0 24px 64px !important; max-width: 100% !important; }
+          .hero-content { padding: 0 24px 72px !important; max-width: 100% !important; }
+          .hero-eyebrow { margin-bottom: 20px !important; }
+          .hero-headline { margin-bottom: 20px !important; }
+          .hero-sub { margin-bottom: 36px !important; }
         }
         @media (max-width: 480px) {
-          .hero-content { padding: 0 16px 48px !important; }
-          .hero-content h1 { font-size: clamp(36px, 10vw, 56px) !important; letter-spacing: -0.5px !important; }
-          .hero-content p { font-size: 14px !important; }
-          .hero-btns { flex-direction: column; gap: 12px !important; }
-          .hero-btns a { width: 100%; justify-content: center; }
+          .hero-content { padding: 0 20px 64px !important; }
+          .hero-content h1 { font-size: clamp(38px, 10vw, 60px) !important; letter-spacing: -1px !important; line-height: 1.05 !important; }
+          .hero-content p { font-size: 14px !important; line-height: 1.7 !important; max-width: 100% !important; }
+          .hero-btns { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
+          .hero-btns a { padding: 13px 24px !important; font-size: 12px !important; }
         }
       `}</style>
     </section>
