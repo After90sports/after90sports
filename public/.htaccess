@@ -17,6 +17,14 @@
 </IfModule>
 
 # ─── Browser Caching ──────────────────────────────────────────────────────────
+# HTML: never cache — always fetch fresh so deploys show immediately
+<FilesMatch "\.(html)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</FilesMatch>
+
+# Static assets: cache long-term — Next.js content-hashes every file name
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresByType image/jpeg              "access plus 1 year"
@@ -25,9 +33,8 @@
   ExpiresByType image/svg+xml           "access plus 1 year"
   ExpiresByType font/woff2              "access plus 1 year"
   ExpiresByType font/woff               "access plus 1 year"
-  ExpiresByType text/css                "access plus 1 month"
-  ExpiresByType application/javascript  "access plus 1 month"
-  ExpiresByType text/html               "access plus 1 hour"
+  ExpiresByType text/css                "access plus 1 year"
+  ExpiresByType application/javascript  "access plus 1 year"
 </IfModule>
 
 # ─── Clean URLs (trailing slash handled by Next.js trailingSlash:true) ────────
