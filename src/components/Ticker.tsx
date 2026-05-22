@@ -7,7 +7,6 @@ const items = [
   'Rapid90',
   'African Sport',
   'Guess The Jam',
-  'Long-Form Writing',
   'Perspective Series',
   'Deep Dives',
   'Behind the Story',
