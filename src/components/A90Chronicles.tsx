@@ -42,6 +42,7 @@ export default function A90Chronicles() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="chronicles-img-overlay"
           style={{
             position: 'absolute',
             bottom: 0,
@@ -280,6 +281,11 @@ export default function A90Chronicles() {
         @media (max-width: 1024px) {
           .chronicles-section { grid-template-columns: 1fr !important; }
           .chronicles-right { padding: 64px 24px !important; }
+        }
+        @media (max-width: 640px) {
+          .chronicles-img-overlay { padding: 24px !important; }
+          .chronicles-img-overlay h2 { font-size: clamp(40px, 11vw, 64px) !important; letter-spacing: -1px !important; }
+          .chronicles-section > div:first-child { min-height: 400px !important; }
         }
       `}</style>
     </section>

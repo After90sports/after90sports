@@ -215,7 +215,7 @@ export default function Hero() {
 
         {/* Buttons */}
         <FadeUp delay={0.65}>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="hero-btns" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <a
               href="#photographs"
               className="btn-arrow"
@@ -285,7 +285,14 @@ export default function Hero() {
           pointer-events: none !important;
         }
         @media (max-width: 768px) {
-          .hero-content { padding: 0 24px 64px !important; }
+          .hero-content { padding: 0 24px 64px !important; max-width: 100% !important; }
+        }
+        @media (max-width: 480px) {
+          .hero-content { padding: 0 16px 48px !important; }
+          .hero-content h1 { font-size: clamp(36px, 10vw, 56px) !important; letter-spacing: -0.5px !important; }
+          .hero-content p { font-size: 14px !important; }
+          .hero-btns { flex-direction: column; gap: 12px !important; }
+          .hero-btns a { width: 100%; justify-content: center; }
         }
       `}</style>
     </section>

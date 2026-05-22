@@ -14,6 +14,7 @@ export default function Nav() {
 
   return (
     <nav
+      className="site-nav"
       style={{
         position: 'fixed',
         top: 0,
@@ -118,6 +119,10 @@ export default function Nav() {
       <style>{`
         @media (max-width: 1024px) {
           .hidden-mobile { display: none !important; }
+          .site-nav { padding: 0 24px !important; }
+        }
+        @media (max-width: 480px) {
+          .site-nav { padding: 0 16px !important; }
         }
       `}</style>
     </nav>

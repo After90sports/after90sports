@@ -177,8 +177,10 @@ export default function CulturalImpact() {
           .stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; padding-right: 24px !important; }
         }
         @media (max-width: 640px) {
-          .stats-grid { grid-template-columns: 1fr !important; }
-          .stats-grid > div:nth-child(odd) { border-right: none !important; padding-right: 0 !important; }
+          .cultural-impact { padding: 60px 16px 40px !important; }
+          .impact-header { padding-bottom: 40px !important; margin-bottom: 40px !important; }
+          .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+          .stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; padding-right: 16px !important; }
         }
       `}</style>
     </section>

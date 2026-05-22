@@ -255,6 +255,12 @@ export default function VideoCarousel() {
           .video-header { padding-right: 24px !important; flex-direction: column; align-items: flex-start; gap: 24px; }
           .video-controls { padding-right: 24px !important; }
         }
+        @media (max-width: 640px) {
+          .video-section { padding: 60px 0 60px 16px !important; }
+          .video-header { padding-right: 16px !important; margin-bottom: 32px !important; }
+          .video-header h2 { font-size: clamp(28px, 8vw, 48px) !important; }
+          .video-controls { padding-right: 16px !important; margin-top: 20px !important; }
+        }
       `}</style>
     </section>
   )

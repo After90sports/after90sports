@@ -161,3 +161,16 @@ video {
   vertical-align: middle;
   margin-right: 12px;
 }
+
+/* ── Global mobile safeguards ── */
+@media (max-width: 640px) {
+  /* Prevent inputs triggering iOS zoom */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+  /* Keep images from blowing out narrow screens */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

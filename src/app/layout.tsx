@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Oswald, Barlow, Barlow_Condensed, League_Gothic } from 'next/font/google'
 import './globals.css'
 
@@ -29,6 +29,11 @@ const leagueGothic = League_Gothic({
   variable: '--font-league-gothic',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: 'After90 — The Digital Sports Magazine',
