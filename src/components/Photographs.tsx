@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const cards = [
@@ -13,6 +14,7 @@ const cards = [
     readTime: '12 min read',
     date: 'May 2026',
     large: true,
+    slug: 'fifa-intercontinental-cup',
   },
   {
     image: '/UAEMOROC-13.jpg',
@@ -23,6 +25,7 @@ const cards = [
     readTime: '8 min read',
     date: '',
     large: false,
+    slug: 'fifa-arab-cup',
   },
   {
     image: '/IMG_0949A90B.jpg',
@@ -33,6 +36,7 @@ const cards = [
     readTime: '6 min read',
     date: '',
     large: false,
+    slug: 'african-athletics-championship',
   },
 ]
 
@@ -46,6 +50,10 @@ function PhotoCard({
   priority?: boolean
 }) {
   return (
+    <Link
+      href={`/albums/${card.slug}`}
+      style={{ display: 'block', textDecoration: 'none', gridRow: rowSpan ? `span ${rowSpan}` : undefined, height: '100%' }}
+    >
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -56,10 +64,10 @@ function PhotoCard({
         position: 'relative',
         overflow: 'hidden',
         borderRadius: '2px',
-        gridRow: rowSpan ? `span ${rowSpan}` : undefined,
         cursor: 'pointer',
         background: 'var(--gray-800)',
         minHeight: card.large ? '600px' : '290px',
+        height: '100%',
       }}
     >
       {/* Image */}
@@ -172,6 +180,7 @@ function PhotoCard({
         }
       `}</style>
     </motion.div>
+    </Link>
   )
 }
 
