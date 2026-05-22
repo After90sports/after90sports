@@ -46,7 +46,7 @@ export default function LatestChronicles() {
     <section
       id="latest"
       style={{
-        padding: '100px 64px',
+        padding: '50px 64px',
         background: 'var(--black)',
       }}
       className="chronicles-list"
@@ -141,11 +141,11 @@ export default function LatestChronicles() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .chronicles-list { padding: 80px 24px !important; }
+          .chronicles-list { padding: 40px 24px !important; }
           .chronicles-header { flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }
         }
         @media (max-width: 640px) {
-          .chronicles-list { padding: 60px 16px !important; }
+          .chronicles-list { padding: 30px 16px !important; }
           .article-row { grid-template-columns: auto 1fr !important; gap: 14px !important; padding: 24px 0 !important; }
           .article-tag, .article-date { display: none !important; }
         }

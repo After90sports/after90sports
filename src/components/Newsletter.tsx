@@ -18,7 +18,7 @@ export default function Newsletter() {
       id="newsletter"
       style={{
         background: 'var(--gray-900)',
-        padding: '140px 64px',
+        padding: '70px 64px',
         position: 'relative',
         overflow: 'hidden',
       }}

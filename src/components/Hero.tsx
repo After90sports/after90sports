@@ -1,11 +1,8 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
-
-const VIDEO_ID = 'VDax3AXMIbs'
 
 function FadeUp({
   children,
@@ -31,79 +28,7 @@ function FadeUp({
   )
 }
 
-declare global {
-  interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    YT: any
-    onYouTubeIframeAPIReady: () => void
-  }
-}
-
 export default function Hero() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const playerRef = useRef<any>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const coverRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    // Load the IFrame API script once
-    if (!document.getElementById('yt-iframe-api')) {
-      const tag = document.createElement('script')
-      tag.id = 'yt-iframe-api'
-      tag.src = 'https://www.youtube.com/iframe_api'
-      document.head.appendChild(tag)
-    }
-
-    const initPlayer = () => {
-      if (!containerRef.current) return
-      playerRef.current = new window.YT.Player(containerRef.current, {
-        videoId: VIDEO_ID,
-        playerVars: {
-          autoplay: 1,
-          mute: 1,
-          controls: 0,
-          modestbranding: 1,
-          rel: 0,
-          playsinline: 1,
-          iv_load_policy: 3,
-          disablekb: 1,
-          fs: 0,
-          showinfo: 0,
-        },
-        events: {
-          onStateChange: (e: { data: number }) => {
-            // State 1 = playing — lift the black cover
-            if (e.data === 1 && coverRef.current) {
-              coverRef.current.style.opacity = '0'
-              coverRef.current.style.pointerEvents = 'none'
-            }
-            // Restart when the video ends (state 0 = ended)
-            if (e.data === 0) {
-              playerRef.current?.seekTo(0, true)
-              playerRef.current?.playVideo()
-            }
-          },
-        },
-      })
-    }
-
-    if (window.YT?.Player) {
-      initPlayer()
-    } else {
-      // Queue behind any existing callback
-      const prev = window.onYouTubeIframeAPIReady
-      window.onYouTubeIframeAPIReady = () => {
-        prev?.()
-        initPlayer()
-      }
-    }
-
-    return () => {
-      playerRef.current?.destroy()
-      playerRef.current = null
-    }
-  }, [])
-
   return (
     <section
       style={{
@@ -115,8 +40,12 @@ export default function Hero() {
         background: 'var(--black)',
       }}
     >
-      {/* YouTube background — controlled via IFrame API (no playlist → no nav controls) */}
-      <div
+      {/* Local video background — autoplays instantly, no cover needed */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
         style={{
           position: 'absolute',
           top: '50%',
@@ -126,29 +55,12 @@ export default function Hero() {
           minWidth: '100%',
           minHeight: '56.25vw',
           transform: 'translate(-50%, -50%)',
+          objectFit: 'cover',
           pointerEvents: 'none',
         }}
       >
-        <div
-          ref={containerRef}
-          style={{ width: '100%', height: '100%' }}
-        />
-        {/* Blocks any residual pointer events from reaching the iframe */}
-        <div style={{ position: 'absolute', inset: 0 }} />
-      </div>
-
-      {/* Black cover — hides YouTube thumbnail/title until video is playing */}
-      <div
-        ref={coverRef}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'var(--black)',
-          zIndex: 2,
-          transition: 'opacity 0.8s ease',
-          pointerEvents: 'none',
-        }}
-      />
+        <source src="/hero-bg.mp4" type="video/mp4" />
+      </video>
 
       {/* Dark overlay */}
       <div
@@ -302,10 +214,6 @@ export default function Hero() {
       </div>
 
       <style>{`
-        #${VIDEO_ID}-player iframe,
-        .hero-bg iframe {
-          pointer-events: none !important;
-        }
         @media (max-width: 768px) {
           .hero-content { padding: 0 24px 72px !important; max-width: 100% !important; }
           .hero-eyebrow { margin-bottom: 20px !important; }

@@ -125,7 +125,7 @@ export default function A90Chronicles() {
         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
         style={{
           background: 'var(--gray-900)',
-          padding: '96px 80px',
+          padding: '48px 80px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -281,7 +281,7 @@ export default function A90Chronicles() {
       <style>{`
         @media (max-width: 1024px) {
           .chronicles-section { grid-template-columns: 1fr !important; }
-          .chronicles-right { padding: 64px 24px !important; }
+          .chronicles-right { padding: 32px 24px !important; }
         }
         @media (max-width: 640px) {
           .chronicles-img-overlay { padding: 24px !important; }

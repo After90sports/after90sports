@@ -13,7 +13,7 @@ export default function CulturalImpact() {
   return (
     <section
       style={{
-        padding: '140px 64px 100px',
+        padding: '70px 64px 50px',
         background: 'var(--black)',
       }}
       className="cultural-impact"
@@ -168,12 +168,12 @@ export default function CulturalImpact() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .cultural-impact { padding: 80px 24px 48px !important; }
+          .cultural-impact { padding: 40px 24px 24px !important; }
           .impact-header { grid-template-columns: 1fr !important; gap: 32px !important; }
           .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
         }
         @media (max-width: 640px) {
-          .cultural-impact { padding: 60px 16px 40px !important; }
+          .cultural-impact { padding: 30px 16px 20px !important; }
           .impact-header { padding-bottom: 40px !important; margin-bottom: 40px !important; }
           .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
         }

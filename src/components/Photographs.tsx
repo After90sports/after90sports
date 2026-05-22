@@ -189,7 +189,7 @@ export default function Photographs() {
     <section
       id="photographs"
       style={{
-        padding: '100px 64px',
+        padding: '50px 64px',
         background: 'var(--black)',
       }}
       className="photographs-section"
@@ -244,12 +244,12 @@ export default function Photographs() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .photographs-section { padding: 80px 24px !important; }
+          .photographs-section { padding: 40px 24px !important; }
           .photos-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }
           .photos-grid > div:first-child { grid-row: auto !important; }
         }
         @media (max-width: 640px) {
-          .photographs-section { padding: 60px 16px !important; }
+          .photographs-section { padding: 30px 16px !important; }
         }
       `}</style>
     </section>

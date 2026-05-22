@@ -40,5 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large media (serve via CDN or external host)
-public/*.mp4
+# Large media — hero-bg.mp4 is compressed (26MB) and tracked intentionally
+# public/*.mp4
+public/images/albums/
+public/hero-bg.mp4

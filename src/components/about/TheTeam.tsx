@@ -90,7 +90,9 @@ export default function TheTeam() {
         style={{
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
-          gap: '24px',
+          gap: '16px',
+          maxWidth: '700px',
+          margin: '0 auto',
         }}
         className="team-grid"
       >
@@ -113,7 +115,7 @@ export default function TheTeam() {
             <div
               style={{
                 position: 'relative',
-                aspectRatio: '4 / 5',
+                aspectRatio: '3 / 4',
                 background: 'var(--gray-700)',
                 overflow: 'hidden',
               }}
@@ -226,7 +228,7 @@ export default function TheTeam() {
             </div>
 
             {/* Info */}
-            <div style={{ padding: '32px 32px 28px' }}>
+            <div style={{ padding: '20px 20px 18px' }}>
               {/* Role tag */}
               <span
                 style={{
@@ -240,7 +242,7 @@ export default function TheTeam() {
                   border: '1px solid rgba(155,222,28,0.25)',
                   padding: '4px 10px',
                   borderRadius: '2px',
-                  marginBottom: '16px',
+                  marginBottom: '10px',
                 }}
               >
                 {member.role}
@@ -250,13 +252,13 @@ export default function TheTeam() {
               <h3
                 style={{
                   fontFamily: 'var(--font-inter), sans-serif',
-                  fontSize: 'clamp(24px, 2.5vw, 32px)',
+                  fontSize: 'clamp(16px, 1.8vw, 20px)',
                   fontWeight: 900,
                   lineHeight: 1.05,
                   letterSpacing: '-0.5px',
                   textTransform: 'uppercase',
                   color: 'var(--white)',
-                  marginBottom: '16px',
+                  marginBottom: '10px',
                 }}
               >
                 {member.name}
@@ -266,11 +268,11 @@ export default function TheTeam() {
               <p
                 style={{
                   fontFamily: 'var(--font-inter), sans-serif',
-                  fontSize: '14px',
+                  fontSize: '12px',
                   fontWeight: 500,
                   lineHeight: 1.5,
                   color: 'rgba(245,243,238,0.5)',
-                  marginBottom: '28px',
+                  marginBottom: '16px',
                 }}
               >
                 {member.bio}

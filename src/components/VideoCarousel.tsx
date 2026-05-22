@@ -27,7 +27,7 @@ export default function VideoCarousel() {
   return (
     <section
       style={{
-        padding: '100px 0 100px 64px',
+        padding: '50px 0 50px 64px',
         background: 'var(--black)',
         overflow: 'hidden',
       }}
@@ -102,7 +102,7 @@ export default function VideoCarousel() {
       {/* Slider */}
       <div style={{ overflow: 'hidden' }}>
         <motion.div
-          animate={{ x: `calc(${current} * (-66.666% - 12px) + ${current === 0 ? 0 : 0}px)` }}
+          animate={{ x: `calc(${current} * (-33.333% - 12px))` }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           style={{
             display: 'flex',
@@ -114,7 +114,7 @@ export default function VideoCarousel() {
               key={i}
               style={{
                 flexShrink: 0,
-                width: 'calc(66.666% - 12px)',
+                width: 'calc(33.333% - 12px)',
                 borderRadius: '4px',
                 overflow: 'hidden',
                 background: 'var(--gray-900)',
@@ -251,12 +251,12 @@ export default function VideoCarousel() {
 
       <style>{`
         @media (max-width: 1024px) {
-          .video-section { padding: 80px 0 80px 24px !important; }
+          .video-section { padding: 40px 0 40px 24px !important; }
           .video-header { padding-right: 24px !important; flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }
           .video-controls { padding-right: 24px !important; }
         }
         @media (max-width: 640px) {
-          .video-section { padding: 60px 0 60px 16px !important; }
+          .video-section { padding: 30px 0 30px 16px !important; }
           .video-header { padding-right: 16px !important; margin-bottom: 32px !important; }
           .video-header h2 { font-size: clamp(28px, 8vw, 48px) !important; }
           .video-controls { padding-right: 16px !important; margin-top: 20px !important; }
