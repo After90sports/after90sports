@@ -1,0 +1,186 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+const stats = [
+  { number: '25K+', label: 'Monthly Readers' },
+  { number: '3', label: 'Published Stories' },
+  { number: '4', label: 'Countries Reached' },
+  { number: '420K+', label: 'Accumulated Views' },
+]
+
+export default function CulturalImpact() {
+  return (
+    <section
+      style={{
+        padding: '140px 64px 60px',
+        background: 'var(--black)',
+      }}
+      className="cultural-impact"
+    >
+      {/* Header */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '96px',
+          alignItems: 'end',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          paddingBottom: '64px',
+          marginBottom: '64px',
+        }}
+        className="impact-header"
+      >
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          style={{
+            fontFamily: 'var(--font-oswald), sans-serif',
+            fontSize: 'clamp(36px, 4.2vw, 60px)',
+            fontWeight: 400,
+            lineHeight: 1.1,
+            textTransform: 'uppercase',
+            letterSpacing: '-0.5px',
+            color: 'var(--white)',
+          }}
+        >
+          Our Cultural
+          <br />
+          Impact
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          style={{
+            fontFamily: 'var(--font-barlow), sans-serif',
+            fontSize: '16px',
+            fontWeight: 300,
+            lineHeight: 1.75,
+            color: 'rgba(245,243,238,0.6)',
+          }}
+        >
+          After90 is built as a living experience — bringing together thinkers,
+          creators, and communities to exchange ideas, challenge perspectives,
+          and spark new ways of seeing sport and culture in Africa and beyond.
+        </motion.p>
+      </div>
+
+      {/* Stats */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+        }}
+        className="stats-grid"
+      >
+        {stats.map((stat, i) => (
+          <motion.div
+            key={stat.number}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.1 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              borderRight:
+                i < stats.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none',
+              padding: '0 32px 0 0',
+            }}
+          >
+            <span
+              style={{
+                fontFamily: 'var(--font-league-gothic), sans-serif',
+                fontSize: 'clamp(48px, 4.5vw, 72px)',
+                lineHeight: 0.95,
+                color: 'var(--white)',
+                flexShrink: 0,
+                letterSpacing: '-1px',
+              }}
+            >
+              {stat.number}
+            </span>
+            <span
+              style={{
+                fontFamily: 'var(--font-barlow-condensed), sans-serif',
+                fontSize: '11px',
+                fontWeight: 600,
+                letterSpacing: '2px',
+                textTransform: 'uppercase',
+                maxWidth: '140px',
+                lineHeight: 1.4,
+                color: 'rgba(245,243,238,0.55)',
+              }}
+            >
+              {stat.label}{' '}
+              <span style={{ color: 'var(--accent)' }}>↑</span>
+            </span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* CTA */}
+      <div
+        style={{
+          textAlign: 'center',
+          marginTop: '48px',
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+          paddingTop: '48px',
+        }}
+      >
+        <a
+          href="#newsletter"
+          className="btn-arrow"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '10px',
+            fontFamily: 'var(--font-barlow-condensed), sans-serif',
+            fontSize: '13px',
+            fontWeight: 600,
+            letterSpacing: '2.5px',
+            textTransform: 'uppercase',
+            color: 'var(--accent)',
+            border: '1px solid rgba(155,222,28,0.3)',
+            borderRadius: '100px',
+            padding: '14px 36px',
+            background: 'transparent',
+            transition: 'background 0.2s ease, border-color 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.background = 'rgba(155,222,28,0.05)'
+            el.style.borderColor = 'rgba(155,222,28,0.5)'
+          }}
+          onMouseLeave={(e) => {
+            const el = e.currentTarget as HTMLAnchorElement
+            el.style.background = 'transparent'
+            el.style.borderColor = 'rgba(155,222,28,0.3)'
+          }}
+        >
+          LET'S WORK TOGETHER <span className="arrow">→</span>
+        </a>
+      </div>
+
+      <style>{`
+        @media (max-width: 1024px) {
+          .cultural-impact { padding: 80px 24px 48px !important; }
+          .impact-header { grid-template-columns: 1fr !important; gap: 32px !important; }
+          .stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
+          .stats-grid > div { border-right: none !important; padding: 0 !important; }
+          .stats-grid > div:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.08) !important; padding-right: 24px !important; }
+        }
+        @media (max-width: 640px) {
+          .stats-grid { grid-template-columns: 1fr !important; }
+          .stats-grid > div:nth-child(odd) { border-right: none !important; padding-right: 0 !important; }
+        }
+      `}</style>
+    </section>
+  )
+}
