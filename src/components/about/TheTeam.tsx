@@ -4,7 +4,18 @@ import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
-const team = [
+type TeamMember = {
+  initials: string
+  role: string
+  name: string
+  bio: string
+  socials: { label: string; href: string }[]
+  glowX: string
+  glowY: string
+  placeholder: boolean
+}
+
+const team: TeamMember[] = [
   {
     initials: 'FO',
     role: 'Founder & Editor-in-Chief',
@@ -15,7 +26,8 @@ const team = [
       { label: 'X / Twitter', href: '#' },
       { label: 'LinkedIn', href: '#' },
     ],
-    accentOffset: '0%',
+    glowX: '25%',
+    glowY: '30%',
     placeholder: true,
   },
   {
@@ -28,7 +40,8 @@ const team = [
       { label: 'X / Twitter', href: '#' },
       { label: 'LinkedIn', href: '#' },
     ],
-    accentOffset: '30%',
+    glowX: '75%',
+    glowY: '40%',
     placeholder: true,
   },
 ]
@@ -91,7 +104,7 @@ export default function TheTeam() {
         }}
         className="team-grid"
       >
-        {team.map((member, i) => (
+        {team.map((member: TeamMember, i: number) => (
           <motion.div
             key={member.initials}
             initial={{ opacity: 0, y: 40 }}
@@ -121,8 +134,8 @@ export default function TheTeam() {
                   position: 'absolute',
                   inset: 0,
                   background: `
-                    radial-gradient(ellipse at ${member.accentOffset} 30%, rgba(155,222,28,0.07) 0%, transparent 60%),
-                    linear-gradient(135deg, var(--gray-700) 0%, var(--gray-600) 100%)
+                    radial-gradient(ellipse at ${member.glowX} ${member.glowY}, rgba(155,222,28,0.1) 0%, transparent 55%),
+                    linear-gradient(160deg, var(--gray-600) 0%, var(--gray-700) 50%, #0d0d0d 100%)
                   `,
                 }}
               />

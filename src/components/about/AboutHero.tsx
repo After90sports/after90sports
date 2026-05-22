@@ -41,7 +41,7 @@ export default function AboutHero() {
         AFTER90
       </div>
 
-      {/* Diagonal accent line */}
+      {/* Vertical accent line */}
       <div
         aria-hidden="true"
         style={{
@@ -53,6 +53,67 @@ export default function AboutHero() {
           background: 'linear-gradient(to bottom, transparent 0%, rgba(155,222,28,0.15) 40%, rgba(155,222,28,0.15) 60%, transparent 100%)',
         }}
       />
+
+      {/* Top-right editorial corner stamp */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease, delay: 0.8 }}
+        style={{
+          position: 'absolute',
+          top: '40px',
+          right: '64px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'flex-end',
+          gap: '6px',
+        }}
+        className="hero-corner-stamp"
+      >
+        <span style={{
+          fontFamily: 'var(--font-league-gothic), sans-serif',
+          fontSize: '72px',
+          lineHeight: 1,
+          letterSpacing: '-2px',
+          color: 'rgba(155,222,28,0.12)',
+        }}>2024</span>
+        <span style={{
+          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontSize: '10px',
+          fontWeight: 600,
+          letterSpacing: '3px',
+          textTransform: 'uppercase',
+          color: 'rgba(245,243,238,0.2)',
+        }}>Est. Ghana</span>
+      </motion.div>
+
+      {/* Top-left issue label */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, ease, delay: 1 }}
+        style={{
+          position: 'absolute',
+          top: '50px',
+          left: '64px',
+          writingMode: 'vertical-rl',
+          transform: 'rotate(180deg)',
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'center',
+        }}
+        className="hero-side-label"
+      >
+        <span style={{
+          fontFamily: 'var(--font-barlow-condensed), sans-serif',
+          fontSize: '10px',
+          fontWeight: 600,
+          letterSpacing: '3px',
+          textTransform: 'uppercase',
+          color: 'rgba(245,243,238,0.15)',
+        }}>afterninetysports.com</span>
+        <span style={{ width: '1px', height: '48px', background: 'rgba(155,222,28,0.2)', display: 'inline-block' }} />
+      </motion.div>
 
       {/* Content */}
       <div
@@ -107,9 +168,7 @@ export default function AboutHero() {
         >
           Built for
           <br />
-          <span style={{ color: 'var(--accent)' }}>the story</span>
-          <br />
-          tellers.
+          <span style={{ color: 'var(--accent)' }}>the storytellers.</span>
         </motion.h1>
 
         {/* Sub copy + meta row */}
@@ -192,11 +251,14 @@ export default function AboutHero() {
         @media (max-width: 1024px) {
           .about-hero-content { padding: 0 24px 80px !important; }
           .about-hero-meta { flex-direction: column !important; align-items: flex-start !important; gap: 32px !important; }
+          .hero-corner-stamp { right: 24px !important; }
+          .hero-side-label { display: none !important; }
         }
         @media (max-width: 640px) {
           .about-hero-content { padding: 0 16px 64px !important; }
           .about-hero-content h1 { letter-spacing: -1px !important; }
           .scroll-cue { display: none !important; }
+          .hero-corner-stamp { display: none !important; }
         }
       `}</style>
     </section>

@@ -84,7 +84,7 @@ export default function OurStory() {
                   fontSize: 'clamp(72px, 9vw, 128px)',
                   lineHeight: 0.9,
                   letterSpacing: '-2px',
-                  color: 'rgba(245,243,238,0.06)',
+                  color: 'rgba(155,222,28,0.12)',
                   marginBottom: '24px',
                 }}
               >

@@ -164,13 +164,15 @@ export default function WhatWeStandFor() {
         @media (max-width: 1024px) {
           .values-section { padding: 80px 24px !important; }
           .values-header { grid-template-columns: 1fr !important; gap: 24px !important; }
-          .pillar-row { grid-template-columns: 56px 1fr !important; }
-          .pillar-row p { display: none; }
+          .pillar-row { grid-template-columns: 56px 1fr 1fr !important; gap: 24px !important; }
+        }
+        @media (max-width: 768px) {
+          .pillar-row { grid-template-columns: 56px 1fr !important; gap: 16px !important; }
+          .pillar-row p { grid-column: 2; margin-top: 6px; }
         }
         @media (max-width: 640px) {
           .values-section { padding: 64px 16px !important; }
-          .pillar-row { grid-template-columns: 48px 1fr !important; gap: 16px !important; padding: 28px 0 !important; }
-          .pillar-row p { display: block !important; grid-column: 2; margin-top: 8px; }
+          .pillar-row { padding: 28px 0 !important; }
         }
       `}</style>
     </section>
