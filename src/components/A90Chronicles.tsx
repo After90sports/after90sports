@@ -178,8 +178,8 @@ export default function A90Chronicles() {
             marginBottom: '32px',
           }}
         >
-          "Every throw is a statement — not just for me, but for everyone
-          watching from back home."
+          &ldquo;Every throw is a statement — not just for me, but for everyone
+          watching from back home.&rdquo;
         </blockquote>
 
         {/* Body */}

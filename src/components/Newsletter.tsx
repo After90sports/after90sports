@@ -103,7 +103,7 @@ export default function Newsletter() {
               maxWidth: '400px',
             }}
           >
-            Get After90's best writing, photo essays, and chronicles delivered
+            Get After90&apos;s best writing, photo essays, and chronicles delivered
             to your inbox monthly. No noise, just the stories that matter.
           </p>
         </motion.div>
@@ -132,7 +132,7 @@ export default function Newsletter() {
                   marginBottom: '12px',
                 }}
               >
-                You're In.
+                You&apos;re In.
               </p>
               <p
                 style={{
@@ -149,7 +149,9 @@ export default function Newsletter() {
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
               {/* Name input */}
               <div style={{ marginBottom: '32px' }}>
+                <label htmlFor="newsletter-name" style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>Your name</label>
                 <input
+                  id="newsletter-name"
                   type="text"
                   placeholder="Your name"
                   value={name}
@@ -180,7 +182,9 @@ export default function Newsletter() {
 
               {/* Email input */}
               <div style={{ marginBottom: '32px' }}>
+                <label htmlFor="newsletter-email" style={{ position: 'absolute', width: '1px', height: '1px', padding: 0, margin: '-1px', overflow: 'hidden', clip: 'rect(0,0,0,0)', whiteSpace: 'nowrap', border: 0 }}>Your email address</label>
                 <input
+                  id="newsletter-email"
                   type="email"
                   placeholder="Your email address"
                   value={email}

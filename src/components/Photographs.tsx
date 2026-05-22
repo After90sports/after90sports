@@ -39,9 +39,11 @@ const cards = [
 function PhotoCard({
   card,
   rowSpan,
+  priority = false,
 }: {
   card: (typeof cards)[0]
   rowSpan?: number
+  priority?: boolean
 }) {
   return (
     <motion.div
@@ -72,6 +74,7 @@ function PhotoCard({
           src={card.image}
           alt={card.title}
           fill
+          priority={priority}
           style={{
             objectFit: 'cover',
             objectPosition: card.objectPosition,
@@ -225,7 +228,7 @@ export default function Photographs() {
         }}
         className="photos-grid"
       >
-        <PhotoCard card={cards[0]} rowSpan={2} />
+        <PhotoCard card={cards[0]} rowSpan={2} priority />
         <PhotoCard card={cards[1]} />
         <PhotoCard card={cards[2]} />
       </div>

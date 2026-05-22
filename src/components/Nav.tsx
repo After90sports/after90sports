@@ -15,6 +15,7 @@ export default function Nav() {
   return (
     <nav
       className="site-nav"
+      aria-label="Main navigation"
       style={{
         position: 'fixed',
         top: 0,

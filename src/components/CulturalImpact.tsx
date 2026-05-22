@@ -164,7 +164,7 @@ export default function CulturalImpact() {
             el.style.borderColor = 'rgba(155,222,28,0.3)'
           }}
         >
-          LET'S WORK TOGETHER <span className="arrow">→</span>
+          LET&apos;S WORK TOGETHER <span className="arrow">→</span>
         </a>
       </div>
 
