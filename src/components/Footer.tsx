@@ -67,7 +67,7 @@ export default function Footer() {
             alt="After90"
             width={280}
             height={91}
-            style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '36px' }}
+            style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '72px' }}
           />
         </div>
 
