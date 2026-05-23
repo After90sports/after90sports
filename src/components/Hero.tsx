@@ -28,6 +28,9 @@ function FadeUp({
   )
 }
 
+const YT_ID = 'bclsHKzj7sk'
+const YT_THUMB = `https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`
+
 export default function Hero() {
   return (
     <section
@@ -38,14 +41,16 @@ export default function Hero() {
         minHeight: '640px',
         overflow: 'hidden',
         background: 'var(--black)',
+        // Thumbnail shows instantly — no black flash while iframe loads
+        backgroundImage: `url(${YT_THUMB})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
-      {/* Local video background — autoplays instantly, no cover needed */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      {/* YouTube iframe — autoplays muted on top of the thumbnail */}
+      <iframe
+        src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3`}
+        allow="autoplay; encrypted-media"
         style={{
           position: 'absolute',
           top: '50%',
@@ -55,12 +60,10 @@ export default function Hero() {
           minWidth: '100%',
           minHeight: '56.25vw',
           transform: 'translate(-50%, -50%)',
-          objectFit: 'cover',
+          border: 'none',
           pointerEvents: 'none',
         }}
-      >
-        <source src="/hero-bg.mp4" type="video/mp4" />
-      </video>
+      />
 
       {/* Dark overlay */}
       <div
