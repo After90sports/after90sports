@@ -24,11 +24,26 @@ jobs:
       - name: Build static export
         run: npm run build
 
-      # ─── Deploy HTML / JS / CSS to nodejs/public ─────────────────────────────
-      # The site is served from this directory by the Hostinger Node.js app.
-      # Media files (images/albums/, hero-bg.mp4) are uploaded manually via FTP
-      # and are excluded from this deploy so they are never accidentally deleted.
-      - name: Deploy to Hostinger via FTP
+      # ── Step 1: Deploy the Node.js static file server ─────────────────────────
+      # server/app.js is a self-contained HTTP server — no npm install needed.
+      # It serves the Next.js static export from nodejs/public/.
+      - name: Deploy server file to nodejs/
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./server/
+          server-dir: /nodejs/
+          state-name: .ftp-server-sync-state.json
+          exclude: |
+            **/.git*
+            **/.git*/**
+
+      # ── Step 2: Deploy the built static site to nodejs/public/ ────────────────
+      # Media files (images/albums/, hero-bg.mp4) are uploaded manually via
+      # Hostinger File Manager and are excluded here so they are never deleted.
+      - name: Deploy static site to nodejs/public/
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_HOST }}
@@ -43,11 +58,16 @@ jobs:
             **/hero-bg.mp4
             **/images/albums/**
 
-      # ─── Restart Node.js app so it picks up the new files ────────────────────
-      # Without this the old files stay cached in the running process.
+      # ── Step 3: Restart the Node.js app to pick up new files ──────────────────
       - name: Restart Node.js app via Hostinger API
         run: |
-          curl -s -X POST "https://api.hpanel.hostinger.com/api/v1/nodejs/restart" \
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://api.hpanel.hostinger.com/api/v1/nodejs/restart" \
             -H "Authorization: Bearer ${{ secrets.HOSTINGER_API_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            --fail-with-body || echo "⚠️  Auto-restart failed — restart manually in hPanel"
+            -H "Content-Type: application/json")
+          echo "Hostinger API response: $RESPONSE"
+          if [ "$RESPONSE" != "200" ] && [ "$RESPONSE" != "204" ]; then
+            echo "⚠️  Auto-restart returned $RESPONSE — restart manually in hPanel if site is down"
+          else
+            echo "✅ Node.js app restarted successfully"
+          fi
