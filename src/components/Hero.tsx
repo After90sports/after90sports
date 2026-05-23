@@ -49,7 +49,8 @@ export default function Hero() {
     >
       {/* YouTube iframe — autoplays muted on top of the thumbnail */}
       <iframe
-        src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3`}
+        title="After90 hero background"
+        src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&enablejsapi=0`}
         allow="autoplay; encrypted-media"
         style={{
           position: 'absolute',

@@ -24,6 +24,10 @@ jobs:
       - name: Build static export
         run: npm run build
 
+      # ─── Deploy HTML / JS / CSS to nodejs/public ─────────────────────────────
+      # The site is served from this directory by the Hostinger Node.js app.
+      # Media files (images/albums/, hero-bg.mp4) are uploaded manually via FTP
+      # and are excluded from this deploy so they are never accidentally deleted.
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -31,8 +35,19 @@ jobs:
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           local-dir: ./out/
-          server-dir: /public_html/
-          state-name: .ftp-deploy-sync-state-v2.json
+          server-dir: /nodejs/public/
+          state-name: .ftp-deploy-sync-state-v3.json
           exclude: |
             **/.git*
             **/.git*/**
+            **/hero-bg.mp4
+            **/images/albums/**
+
+      # ─── Restart Node.js app so it picks up the new files ────────────────────
+      # Without this the old files stay cached in the running process.
+      - name: Restart Node.js app via Hostinger API
+        run: |
+          curl -s -X POST "https://api.hpanel.hostinger.com/api/v1/nodejs/restart" \
+            -H "Authorization: Bearer ${{ secrets.HOSTINGER_API_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            --fail-with-body || echo "⚠️  Auto-restart failed — restart manually in hPanel"
