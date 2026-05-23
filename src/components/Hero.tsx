@@ -141,9 +141,9 @@ export default function Hero() {
               maxWidth: '520px',
             }}
           >
-            After90 is a sports digital magazine exploring the culture,
-            stories, and passion that live beyond the game — bringing fans
-            closer to sport through premium storytelling and fresh perspectives.
+            AFTER90 is your trusted platform for authentic sports storytelling.
+            We go beyond the game to uncover the human side of sport through
+            compelling long-form content, powerful imagery, and film.
           </p>
         </FadeUp>
 

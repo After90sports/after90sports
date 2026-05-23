@@ -78,12 +78,14 @@ export default function Manifesto() {
               marginBottom: '48px',
             }}
           >
-            Sport is never just sport.{' '}
+            Sport is identity.{' '}
             <span style={{ color: 'rgba(245,243,238,0.35)' }}>
-              It is identity, politics, joy, grief, history and hope — all playing
-              out on a pitch, a track, or a court.
+              What we witness on pitches, tracks, and courts is only a fraction
+              of the story. Beyond the performance lives the rest of it — the
+              culture, the quiet struggles, the grit, and the lived experiences
+              that shape who these athletes really are.
             </span>{' '}
-            <span style={{ color: 'var(--accent)' }}>We tell that fuller story.</span>
+            <span style={{ color: 'var(--accent)' }}>We don&apos;t just watch the game. We exist to tell that fuller story.</span>
           </p>
         </motion.blockquote>
 
@@ -111,22 +113,10 @@ export default function Manifesto() {
               color: 'rgba(245,243,238,0.55)',
             }}
           >
-            Founded in Ghana, After90 covers sport across Africa and beyond — not
-            just the results, but the culture, the people, and the moments that
-            make it all matter.
-          </p>
-          <p
-            style={{
-              fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: '16px',
-              fontWeight: 500,
-              lineHeight: 1.5,
-              color: 'rgba(245,243,238,0.55)',
-            }}
-          >
-            Through photography, long-form writing, and video, we document what
-            happens after the final whistle — the conversations, the celebrations,
-            the quiet moments the cameras usually miss.
+            We capture emotion through powerful imagery, bring depth through
+            long-form writing and editorials, and document journeys through
+            film — preserving the conversations and perspectives that get lost
+            in the noise of the moment.
           </p>
         </motion.div>
       </div>

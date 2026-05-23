@@ -7,8 +7,8 @@ const ease = [0.22, 1, 0.36, 1] as const
 const chapters = [
   {
     number: '01',
-    heading: 'Where It All Started',
-    body: `After90 began as a conversation between friends — journalists, photographers, and sports fans who felt African sport deserved a sharper, more honest lens. Too often, the coverage stopped at the scoreline. We wanted to go deeper.\n\nIn 2024, we launched with a simple premise: every event, every athlete, every tournament has a story worth telling. Not just for fans, but for anyone who cares about culture, identity, and what sport reveals about us as people.`,
+    heading: 'Where It Started. Where We Are.',
+    body: `What started as a conversation about the mindset behind our players' performances has grown into a platform that documents what happens when the whistle is silent and the crowd has moved on. The vision we set in 2024 is still alive — but it has deepened. Every individual carries a story worth telling. We exist to make sure those stories are heard.\n\nToday, our lenses have covered the FIFA Intercontinental Cup, the CAF Champions League, the FIFA World Cup Qualifiers, the Arab Cup, the Accra Polo League, the African Senior Athletics Championship, and the Ghana Premier League. Our editorials — the A90 Chronicles — draw over 25,000 monthly readers. And on YouTube, A90 Vs PROs and Rapid90 are changing how fans connect with the players they love. The journey is still unfolding. We are glad to be building it with you.`,
     stat: { number: '2024', label: 'Year founded' },
   },
   {

@@ -90,9 +90,9 @@ export default function AboutHero() {
             marginBottom: '36px',
           }}
         >
-          Built for
+          Built to
           <br />
-          <span style={{ color: 'var(--accent)' }}>the storytellers.</span>
+          <span style={{ color: 'var(--accent)' }}>Be a Voice.</span>
         </motion.h1>
 
         {/* Sub copy */}
@@ -110,9 +110,13 @@ export default function AboutHero() {
             margin: '0 auto',
           }}
         >
-          After90 was born from a simple belief: the most compelling stories in
-          sport rarely make the headlines. We exist to find them, tell them, and
-          share them with the world.
+          Far too many stories remain unheard. From the young talent next door
+          searching for visibility to the overlooked athletes shaping culture
+          across Africa and beyond, AFTER90 exists to give them a platform and
+          a presence.
+          <br /><br />
+          We are committed to discovering the people, journeys, and experiences
+          that continue to shape the heartbeat of the game.
         </motion.p>
       </div>
 

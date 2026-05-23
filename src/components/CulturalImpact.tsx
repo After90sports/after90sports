@@ -46,9 +46,9 @@ export default function CulturalImpact() {
             color: 'var(--white)',
           }}
         >
-          Our Cultural
+          Built for the Culture,
           <br />
-          Impact
+          Backed by Impact.
         </motion.h2>
 
         <motion.p
@@ -64,9 +64,11 @@ export default function CulturalImpact() {
             color: 'rgba(245,243,238,0.6)',
           }}
         >
-          After90 exists where sport meets culture — documenting the athletes,
-          stories, and communities that define African sport and take it
-          to the world.
+          Rooted in African culture, our lenses, pens, and film are driven by
+          the energy and stories that live beyond the game. We are redefining
+          sports storytelling for a new generation of fans — crafting every
+          narrative to connect with the culture, spark conversation, and leave
+          a lasting impact.
         </motion.p>
       </div>
 

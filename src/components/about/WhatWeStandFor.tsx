@@ -8,22 +8,22 @@ const pillars = [
   {
     number: '01',
     title: 'Depth Over Speed',
-    body: 'We take the time to get the story right. In a world of instant takes, we believe in the long read, the second interview, and the follow-up that everyone else skips.',
+    body: 'We slow down to find the story beneath the performance. We choose narratives that last over ones that only trend.',
   },
   {
     number: '02',
     title: 'Africa First',
-    body: 'Our home ground is the African continent. We cover its sports, its athletes, and its fans with the seriousness they deserve — not as a footnote, but as the main story.',
+    body: 'We tell sport from an African perspective — rooted in its culture, its people, and its realities.',
   },
   {
     number: '03',
     title: 'Visual Integrity',
-    body: "Every photograph we publish is made with intent. Our imagery doesn't just illustrate — it tells its own story, holds its own weight, and earns its place on the page.",
+    body: 'Every image and frame we produce is honest, intentional, and worthy of the story it represents.',
   },
   {
     number: '04',
     title: 'Community First',
-    body: 'After90 exists for the fans, the athletes, and the communities that live and breathe sport. We build for them, with them — not for clicks or algorithms.',
+    body: 'Athletes, fans, and everyday voices shape what we do. Their stories guide our direction and define our purpose.',
   },
 ]
 
@@ -77,8 +77,8 @@ export default function WhatWeStandFor() {
             color: 'rgba(245,243,238,0.5)',
           }}
         >
-          These aren&apos;t just values on a page. They are the decisions we make
-          every time we choose a story, frame a shot, or publish a word.
+          Africa is not an afterthought in the global sports conversation.
+          It is central to it. And we tell it that way.
         </p>
       </motion.div>
 
