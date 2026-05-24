@@ -217,6 +217,7 @@ export default function A90Chronicles() {
           ].map((s) => (
             <div key={s.label}>
               <div
+                className="chron-stat-num"
                 style={{
                   fontFamily: 'var(--font-inter), sans-serif',
                   fontSize: '40px',
@@ -287,6 +288,7 @@ export default function A90Chronicles() {
           .chronicles-img-overlay { padding: 24px !important; }
           .chronicles-img-overlay h2 { font-size: clamp(40px, 11vw, 64px) !important; letter-spacing: -1px !important; }
           .chronicles-section > div:first-child { min-height: 400px !important; }
+          .chron-stat-num { font-size: 26px !important; letter-spacing: -0.3px !important; }
         }
       `}</style>
     </section>

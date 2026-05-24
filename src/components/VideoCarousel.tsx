@@ -1,28 +1,102 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const videos = [
   {
-    src: 'https://www.youtube.com/embed/A0i8ZspYpWY?si=tBMvbFqfsNYi447Q',
+    id: 'A0i8ZspYpWY',
+    src: 'https://www.youtube.com/embed/A0i8ZspYpWY?autoplay=1&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
   {
-    src: 'https://www.youtube.com/embed/bDY7klbL2GQ?si=P2QRfMAEkAhbzBsf',
+    id: 'bDY7klbL2GQ',
+    src: 'https://www.youtube.com/embed/bDY7klbL2GQ?autoplay=1&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
   {
-    src: 'https://www.youtube.com/embed/VDax3AXMIbs?si=x73_kVwA9XZ8o_IT&start=12',
+    id: 'VDax3AXMIbs',
+    src: 'https://www.youtube.com/embed/VDax3AXMIbs?autoplay=1&start=12&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
 ]
 
+function VideoSlide({ video }: { video: typeof videos[0] }) {
+  const [playing, setPlaying] = useState(false)
+  const thumb = `https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`
+
+  return (
+    <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, background: '#000' }}>
+      {playing ? (
+        <iframe
+          src={video.src}
+          allow={video.allow}
+          allowFullScreen
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 'none' }}
+          title={`After90 Video`}
+        />
+      ) : (
+        <button
+          onClick={() => setPlaying(true)}
+          aria-label="Play video"
+          style={{
+            position: 'absolute', inset: 0, width: '100%', height: '100%',
+            border: 'none', padding: 0, cursor: 'pointer', background: 'none',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+          }}
+        >
+          {/* Thumbnail */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={thumb}
+            alt="Video thumbnail"
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+          {/* Dark overlay on hover handled by CSS */}
+          <div className="play-overlay" style={{
+            position: 'absolute', inset: 0,
+            background: 'rgba(0,0,0,0.25)',
+            transition: 'background 0.2s ease',
+          }} />
+          {/* Play button */}
+          <div style={{
+            position: 'relative', zIndex: 1,
+            width: '64px', height: '64px', borderRadius: '50%',
+            background: 'var(--accent)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            transition: 'transform 0.2s ease',
+          }}
+            className="play-btn"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="var(--black)">
+              <polygon points="5,3 19,12 5,21" />
+            </svg>
+          </div>
+        </button>
+      )}
+    </div>
+  )
+}
+
 export default function VideoCarousel() {
   const [current, setCurrent] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
 
   const prev = () => setCurrent((c) => Math.max(0, c - 1))
   const next = () => setCurrent((c) => Math.min(videos.length - 1, c + 1))
+
+  // Mobile: one video fills ~88% of the viewport (peek of next)
+  // Desktop: three videos side-by-side (33.333% each)
+  const slideW = isMobile ? '88%' : '33.333%'
+  const gapPx = 16
 
   return (
     <section
@@ -102,11 +176,11 @@ export default function VideoCarousel() {
       {/* Slider */}
       <div style={{ overflow: 'hidden' }}>
         <motion.div
-          animate={{ x: `calc(${current} * (-33.333% - 12px))` }}
+          animate={{ x: `calc(${current} * (-${slideW} - ${gapPx}px))` }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           style={{
             display: 'flex',
-            gap: '16px',
+            gap: `${gapPx}px`,
           }}
         >
           {videos.map((video, i) => (
@@ -114,31 +188,13 @@ export default function VideoCarousel() {
               key={i}
               style={{
                 flexShrink: 0,
-                width: 'calc(33.333% - 12px)',
+                width: `calc(${slideW} - ${gapPx / 2}px)`,
                 borderRadius: '4px',
                 overflow: 'hidden',
                 background: 'var(--gray-900)',
               }}
             >
-              <div
-                style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}
-              >
-                <iframe
-                  src={video.src}
-                  allow={video.allow}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    border: 'none',
-                  }}
-                  title={`After90 Video ${i + 1}`}
-                />
-              </div>
+              <VideoSlide video={video} />
             </div>
           ))}
         </motion.div>
@@ -250,6 +306,9 @@ export default function VideoCarousel() {
       </div>
 
       <style>{`
+        button:hover .play-overlay { background: rgba(0,0,0,0.15) !important; }
+        button:hover .play-btn { transform: scale(1.08); }
+
         @media (max-width: 1024px) {
           .video-section { padding: 40px 0 40px 24px !important; }
           .video-header { padding-right: 24px !important; flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }

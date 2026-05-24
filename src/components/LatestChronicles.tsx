@@ -62,20 +62,6 @@ export default function LatestChronicles() {
         className="chronicles-header"
       >
         <div>
-          <p
-            className="eyebrow-line"
-            style={{
-              fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: '11px',
-              fontWeight: 900,
-              letterSpacing: '0.5px',
-              textTransform: 'uppercase',
-              color: 'var(--accent)',
-              marginBottom: '16px',
-            }}
-          >
-            CHRONICLES
-          </p>
           <h2
             style={{
               fontFamily: 'var(--font-inter), sans-serif',
@@ -146,8 +132,11 @@ export default function LatestChronicles() {
         }
         @media (max-width: 640px) {
           .chronicles-list { padding: 30px 16px !important; }
-          .article-row { grid-template-columns: auto 1fr !important; gap: 14px !important; padding: 24px 0 !important; }
+          .article-row { grid-template-columns: auto 1fr !important; gap: 14px !important; padding: 20px 0 !important; }
           .article-tag, .article-date { display: none !important; }
+          .article-num { font-size: 18px !important; padding-top: 2px !important; }
+          .article-title { font-size: 14px !important; margin-bottom: 0 !important; }
+          .article-excerpt { display: none !important; }
         }
       `}</style>
     </section>
@@ -170,9 +159,7 @@ function ArticleRow({
   const rowRef = useRef<HTMLDivElement>(null)
 
   const handleMouseEnter = () => {
-    if (rowRef.current) {
-      onMouseEnter(rowRef.current.getBoundingClientRect())
-    }
+    if (rowRef.current) onMouseEnter(rowRef.current.getBoundingClientRect())
   }
 
   return (
@@ -199,6 +186,7 @@ function ArticleRow({
     >
       {/* Number */}
       <span
+        className="article-num"
         style={{
           fontFamily: 'var(--font-inter), sans-serif',
           fontSize: '32px',
@@ -215,6 +203,7 @@ function ArticleRow({
       {/* Title + body */}
       <div>
         <h3
+          className="article-title"
           style={{
             fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '20px',
@@ -230,6 +219,7 @@ function ArticleRow({
           {article.title}
         </h3>
         <p
+          className="article-excerpt"
           style={{
             fontFamily: 'var(--font-inter), sans-serif',
             fontSize: '13px',

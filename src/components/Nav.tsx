@@ -59,6 +59,7 @@ export default function Nav() {
             alt="After90"
             width={160}
             height={52}
+            className="nav-logo"
             style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '44px' }}
             priority
           />
@@ -142,7 +143,7 @@ export default function Nav() {
             background: 'transparent',
             border: 'none',
             cursor: 'pointer',
-            padding: '6px',
+            padding: '8px',
           }}
         >
           {/* Three bars that animate to X */}
@@ -268,10 +269,15 @@ export default function Nav() {
         @media (max-width: 1024px) {
           .nav-desktop   { display: none !important; }
           .nav-hamburger { display: flex !important; }
-          .site-nav      { padding: 0 24px !important; }
+          .site-nav      { padding: 0 32px !important; }
         }
         @media (max-width: 480px) {
-          .site-nav { padding: 0 16px !important; }
+          .site-nav { padding: 0 28px !important; }
+        }
+
+        /* logo size */
+        @media (max-width: 1024px) {
+          .nav-logo { height: 30px !important; }
         }
 
         /* nav-link underline */

@@ -19,8 +19,9 @@ export default function ChroniclePopup({
   onMouseLeave,
 }: Props) {
   const popupRef = useRef<HTMLDivElement>(null)
-  const POPUP_WIDTH = 380
-  const POPUP_HEIGHT = 480
+  const POPUP_WIDTH = 340
+  const POPUP_HEIGHT = 460
+  const GAP = 24
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -35,19 +36,18 @@ export default function ChroniclePopup({
   const viewportW = window.innerWidth
   const viewportH = window.innerHeight
 
-  // Position to the right, flip left if needed
-  let left = anchorRect.right + 16
-  if (left + POPUP_WIDTH > viewportW - 16) {
-    left = anchorRect.left - POPUP_WIDTH - 16
-  }
-  if (left < 16) left = 16
+  // Always pin to right side of viewport with safe margin, never overflow
+  const left = Math.min(
+    anchorRect.right + GAP,
+    viewportW - POPUP_WIDTH - GAP
+  )
 
-  // Vertical: align to row, clamp to viewport
+  // Align top of popup to row, clamp so it never goes off bottom or top
   let top = anchorRect.top
-  if (top + POPUP_HEIGHT > viewportH - 16) {
-    top = viewportH - POPUP_HEIGHT - 16
+  if (top + POPUP_HEIGHT > viewportH - GAP) {
+    top = viewportH - POPUP_HEIGHT - GAP
   }
-  if (top < 16) top = 16
+  if (top < GAP) top = GAP
 
   return (
     <div
@@ -208,7 +208,7 @@ export default function ChroniclePopup({
               color: 'rgba(245,243,238,0.3)',
             }}
           >
-            After90 Magazine
+            After90
           </span>
           <a
             href={chronicle.url}

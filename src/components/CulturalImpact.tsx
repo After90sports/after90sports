@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { number: '25K+', label: 'Monthly Readers' },
+  { number: '15', label: 'Monthly Readers' },
   { number: '3', label: 'Published Stories' },
   { number: '4', label: 'Countries Reached' },
-  { number: '420K+', label: 'Accumulated Views' },
+  { number: '5K+', label: 'Accumulated Views' },
 ]
 
 export default function CulturalImpact() {
@@ -87,6 +87,7 @@ export default function CulturalImpact() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.08 }}
+            className="stat-item"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -94,6 +95,7 @@ export default function CulturalImpact() {
             }}
           >
             <span
+              className="stat-number"
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: 'clamp(48px, 4.5vw, 72px)',
@@ -113,13 +115,15 @@ export default function CulturalImpact() {
                 fontWeight: 900,
                 letterSpacing: '0.3px',
                 textTransform: 'uppercase',
-                maxWidth: '140px',
                 lineHeight: 1.4,
                 color: 'rgba(245,243,238,0.55)',
               }}
             >
-              {stat.label}{' '}
-              <span style={{ color: 'var(--accent)' }}>↑</span>
+              {stat.label.split(' ').slice(0, -1).join(' ')}{stat.label.includes(' ') ? ' ' : ''}
+              <span style={{ whiteSpace: 'nowrap' }}>
+                {stat.label.split(' ').slice(-1)[0]}{' '}
+                <span style={{ color: 'var(--accent)' }}>↑</span>
+              </span>
             </span>
           </motion.div>
         ))}
@@ -177,7 +181,9 @@ export default function CulturalImpact() {
         @media (max-width: 640px) {
           .cultural-impact { padding: 30px 16px 20px !important; }
           .impact-header { padding-bottom: 40px !important; margin-bottom: 40px !important; }
-          .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 28px !important; }
+          .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 28px 16px !important; }
+          .stat-item { flex-direction: column !important; align-items: flex-start !important; gap: 6px !important; }
+          .stat-number { font-size: clamp(36px, 10vw, 52px) !important; }
         }
       `}</style>
     </section>

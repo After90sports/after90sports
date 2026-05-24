@@ -22,7 +22,7 @@ const colHeadingStyle: React.CSSProperties = {
   fontWeight: 700,
   letterSpacing: '0.5px',
   textTransform: 'uppercase',
-  color: 'rgba(245,243,238,0.35)',
+  color: 'rgba(245,243,238,1)',
   marginBottom: '24px',
 }
 
@@ -67,7 +67,8 @@ export default function Footer() {
             alt="After90"
             width={280}
             height={91}
-            style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '72px' }}
+            className="footer-logo"
+            style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '48px' }}
           />
         </div>
 
@@ -126,6 +127,7 @@ export default function Footer() {
 
       {/* Bottom row */}
       <div
+        className="footer-bottom"
         style={{
           display: 'flex',
           justifyContent: 'space-between',
@@ -143,7 +145,7 @@ export default function Footer() {
             color: 'rgba(245,243,238,0.3)',
           }}
         >
-          © {new Date().getFullYear()} After90 Magazine. All rights reserved.
+          © {new Date().getFullYear()} After90. All rights reserved.
         </p>
 
         <div style={{ display: 'flex', gap: '24px' }}>
@@ -177,10 +179,25 @@ export default function Footer() {
           .footer { padding: 40px 24px 24px !important; }
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
           .footer-grid > div:first-child { grid-column: 1 / -1; }
+          .footer-logo { height: 40px !important; }
         }
         @media (max-width: 640px) {
-          .footer { padding: 32px 16px 20px !important; }
-          .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+          .footer { padding: 32px 20px 24px !important; }
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+            text-align: center !important;
+          }
+          .footer-grid > div:first-child { grid-column: 1 !important; display: flex !important; justify-content: center !important; }
+          .footer-logo { height: 40px !important; }
+          .footer-grid ul { align-items: center !important; }
+          .footer-grid > div:last-child > div { justify-content: center !important; }
+          .footer-bottom {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            gap: 12px !important;
+          }
         }
       `}</style>
     </footer>

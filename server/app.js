@@ -7,10 +7,22 @@
 
 'use strict';
 
-const http  = require('http');
-const fs    = require('fs');
-const path  = require('path');
-const zlib  = require('zlib');
+const http       = require('http');
+const fs         = require('fs');
+const path       = require('path');
+const zlib       = require('zlib');
+const nodemailer = require('nodemailer');
+
+// ── Email transporter (configure via environment variables in hPanel) ──
+const transporter = nodemailer.createTransport({
+  host   : process.env.SMTP_HOST || 'smtp.hostinger.com',
+  port   : parseInt(process.env.SMTP_PORT || '465', 10),
+  secure : true,
+  auth   : {
+    user : process.env.SMTP_USER || 'reach@afterninetysports.com',
+    pass : process.env.SMTP_PASS || '',
+  },
+});
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const PORT       = process.env.PORT || 3000;
@@ -95,7 +107,20 @@ function serve404(req, res) {
   }
 }
 
-const server = http.createServer((req, res) => {
+// ── Helper: parse JSON body ──
+function readBody(req) {
+  return new Promise((resolve, reject) => {
+    let data = '';
+    req.on('data', chunk => { data += chunk; });
+    req.on('end', () => {
+      try { resolve(JSON.parse(data)); }
+      catch { resolve({}); }
+    });
+    req.on('error', reject);
+  });
+}
+
+const server = http.createServer(async (req, res) => {
   // Strip query string
   let urlPath = req.url.split('?')[0];
 
@@ -103,6 +128,32 @@ const server = http.createServer((req, res) => {
   if (req.headers.host && req.headers.host.startsWith('www.')) {
     res.writeHead(301, { Location: `https://afterninetysports.com${urlPath}` });
     return res.end();
+  }
+
+  // ── POST /api/subscribe — newsletter sign-up ──
+  if (req.method === 'POST' && urlPath === '/api/subscribe') {
+    res.setHeader('Access-Control-Allow-Origin', 'https://afterninetysports.com');
+    res.setHeader('Content-Type', 'application/json');
+    try {
+      const { email } = await readBody(req);
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        res.writeHead(400);
+        return res.end(JSON.stringify({ error: 'Invalid email address.' }));
+      }
+      await transporter.sendMail({
+        from   : `"After90 Dispatch" <${process.env.SMTP_USER || 'reach@afterninetysports.com'}>`,
+        to     : 'reach@afterninetysports.com',
+        subject: 'New Dispatch Subscriber',
+        text   : `New subscriber: ${email}`,
+        html   : `<p>New subscriber signed up for The Dispatch:</p><p><strong>${email}</strong></p>`,
+      });
+      res.writeHead(200);
+      return res.end(JSON.stringify({ ok: true }));
+    } catch (err) {
+      console.error('[subscribe]', err.message);
+      res.writeHead(500);
+      return res.end(JSON.stringify({ error: 'Failed to send. Please try again.' }));
+    }
   }
 
   // 1. Exact file match  (e.g. /_next/static/chunks/main.js)
