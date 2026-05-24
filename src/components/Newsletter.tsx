@@ -6,31 +6,10 @@ import { motion } from 'framer-motion'
 export default function Newsletter() {
   const [email, setEmail] = useState('')
   const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!email) return
-    setLoading(true)
-    setError('')
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-      if (res.ok) {
-        setSubmitted(true)
-      } else {
-        const data = await res.json()
-        setError(data.error || 'Something went wrong. Please try again.')
-      }
-    } catch {
-      setError('Could not connect. Please try again.')
-    } finally {
-      setLoading(false)
-    }
+    if (email) setSubmitted(true)
   }
 
   return (
@@ -195,16 +174,10 @@ export default function Newsletter() {
                 onMouseLeave={(e) =>
                   ((e.currentTarget as HTMLButtonElement).style.background = 'var(--accent)')
                 }
-                disabled={loading}
               >
-                {loading ? '...' : 'Subscribe →'}
+                Subscribe →
               </button>
             </div>
-            {error && (
-              <p style={{ fontFamily: 'var(--font-inter), sans-serif', fontSize: '12px', fontWeight: 500, color: '#ff6b6b', marginBottom: '8px' }}>
-                {error}
-              </p>
-            )}
             <p
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
