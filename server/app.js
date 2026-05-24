@@ -11,18 +11,22 @@ const http       = require('http');
 const fs         = require('fs');
 const path       = require('path');
 const zlib       = require('zlib');
-const nodemailer = require('nodemailer');
-
-// ── Email transporter (configure via environment variables in hPanel) ──
-const transporter = nodemailer.createTransport({
-  host   : process.env.SMTP_HOST || 'smtp.hostinger.com',
-  port   : parseInt(process.env.SMTP_PORT || '465', 10),
-  secure : true,
-  auth   : {
-    user : process.env.SMTP_USER || 'reach@afterninetysports.com',
-    pass : process.env.SMTP_PASS || '',
-  },
-});
+// ── Email transporter (loaded lazily so missing module doesn't crash the server) ──
+let transporter = null;
+try {
+  const nodemailer = require('nodemailer');
+  transporter = nodemailer.createTransport({
+    host   : process.env.SMTP_HOST || 'smtp.hostinger.com',
+    port   : parseInt(process.env.SMTP_PORT || '465', 10),
+    secure : true,
+    auth   : {
+      user : process.env.SMTP_USER || 'reach@afterninetysports.com',
+      pass : process.env.SMTP_PASS || '',
+    },
+  });
+} catch {
+  console.warn('[After90] nodemailer not found — /api/subscribe will be unavailable until npm install is run in server/');
+}
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const PORT       = process.env.PORT || 3000;
@@ -135,6 +139,10 @@ const server = http.createServer(async (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://afterninetysports.com');
     res.setHeader('Content-Type', 'application/json');
     try {
+      if (!transporter) {
+        res.writeHead(503);
+        return res.end(JSON.stringify({ error: 'Email service not configured yet.' }));
+      }
       const { email } = await readBody(req);
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         res.writeHead(400);
