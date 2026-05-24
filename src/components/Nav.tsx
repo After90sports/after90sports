@@ -5,10 +5,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const navItems = [
-  { label: 'Photographs',   href: '#photographs'  },
-  { label: 'A90 Chronicles', href: '#a90chronicles' },
-  { label: 'Our Partners',  href: '#editions'      },
-  { label: 'About',         href: '/about'         },
+  { label: 'Photographs',   href: '/#photographs'  },
+  { label: 'A90 Chronicles', href: '/#a90chronicles' },
+  { label: 'Our Partners',  href: '/#editions'      },
+  { label: 'About',         href: '/about'          },
 ]
 
 export default function Nav() {
