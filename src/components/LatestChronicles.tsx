@@ -156,7 +156,7 @@ function ArticleRow({
   onMouseEnter: (rect: DOMRect) => void
   onMouseLeave: () => void
 }) {
-  const rowRef = useRef<HTMLDivElement>(null)
+  const rowRef = useRef<HTMLAnchorElement>(null)
 
   const handleMouseEnter = () => {
     if (rowRef.current) onMouseEnter(rowRef.current.getBoundingClientRect())
