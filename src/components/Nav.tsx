@@ -49,7 +49,7 @@ export default function Nav() {
             : 'linear-gradient(to bottom, rgba(10,10,10,0.85), transparent)',
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
           WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+          borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : 'none',
         }}
       >
         {/* Logo */}
