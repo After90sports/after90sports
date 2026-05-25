@@ -8,14 +8,14 @@ const chapters = [
   {
     number: '01',
     heading: 'Where It Started. Where We Are.',
-    body: `What started as a conversation about the mindset behind our players' performances has grown into a platform that documents what happens when the whistle is silent and the crowd has moved on. The vision we set in 2024 is still alive, but it has deepened. Every individual carries a story worth telling. We exist to make sure those stories are heard.\n\nToday, our lenses have covered the FIFA Intercontinental Cup, the CAF Champions League, the FIFA World Cup Qualifiers, the Arab Cup, the Accra Polo League, the African Senior Athletics Championship, and the Ghana Premier League. Our editorials, the A90 Chronicles, draw over 15 monthly readers. And on YouTube, A90 Vs PROs and Rapid90 are changing how fans connect with the players they love. The journey is still unfolding. We are glad to be building it with you.`,
+    body: `What started as a conversation about the mindset behind our players' performances has grown into a platform that documents what happens when the whistle is silent and the crowd has moved on. The vision we set in 2024 is still alive, but it has deepened. Every individual carries a story worth telling. We exist to make sure those stories are heard.\n\nToday, our lenses have covered the FIFA Intercontinental Cup, the CAF Champions League, the FIFA World Cup Qualifiers, the Arab Cup, the Accra Polo League, the African Senior Athletics Championship, and the Ghana Premier League. Our editorials, the A90 Chronicles, draw over 15 monthly readers. And on YouTube, A90 Vs PROs, Guess the Jam and Rapid90 are changing how fans connect with the players they love. The journey is still unfolding. We are glad to be building it with you.`,
     stat: { number: '2024', label: 'Year founded' },
   },
   {
     number: '02',
     heading: 'What We Have Built',
-    body: `From the polo grounds of Accra to the athletics tracks of the African Championships, After90 has been on the ground, camera in hand, notebook open. We have published long-form chronicles, produced original video films, and built a community of readers who expect more than match reports.\n\nToday we reach over 25,000 readers monthly across Africa, Europe, and beyond, with a growing archive of premium sports storytelling unlike anything else on the continent.`,
-    stat: { number: '25K+', label: 'Monthly readers' },
+    body: `From the polo grounds of Accra to the athletics tracks of the African Championships, After90 has been on the ground, camera in hand, notebook open. We have published long-form chronicles, produced original video films, and built a community of readers who expect more than match reports.\n\nToday we reach 15 readers monthly across Africa, Europe, and beyond, with a growing archive of premium sports storytelling unlike anything else on the continent.`,
+    stat: { number: '15', label: 'Monthly readers' },
   },
 ]
 
