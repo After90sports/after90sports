@@ -78,19 +78,6 @@ export default function OurStory() {
           >
             {/* Left — Chapter label + stat */}
             <div style={{ position: 'sticky', top: '120px' }}>
-              <div
-                style={{
-                  fontFamily: 'var(--font-inter), sans-serif',
-                  fontSize: 'clamp(72px, 9vw, 128px)',
-                  lineHeight: 0.9,
-                  letterSpacing: '-2px',
-                  color: 'rgba(155,222,28,0.12)',
-                  marginBottom: '24px',
-                }}
-              >
-                {ch.number}
-              </div>
-
               <h2
                 style={{
                   fontFamily: 'var(--font-inter), sans-serif',
