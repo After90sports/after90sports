@@ -141,7 +141,7 @@ export default function AboutCTA() {
                   'rgba(245,243,238,0.2)')
               }
             >
-              READ OUR WORK ↗
+              READ OUR WORK →
             </a>
           </div>
         </motion.div>

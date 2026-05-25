@@ -122,7 +122,7 @@ export default function Nav() {
               ((e.currentTarget as HTMLAnchorElement).style.background = 'var(--accent)')
             }
           >
-            WATCH <span className="arrow">↗</span>
+            WATCH <span className="arrow">→</span>
           </a>
         </div>
 
@@ -240,7 +240,7 @@ export default function Nav() {
               transitionDelay: `${0.05 + navItems.length * 0.06}s`,
             }}
           >
-            WATCH ↗
+            WATCH →
           </a>
         </nav>
       </div>
