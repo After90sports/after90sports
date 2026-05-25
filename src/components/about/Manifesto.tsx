@@ -81,7 +81,7 @@ export default function Manifesto() {
             Sport is identity.{' '}
             <span style={{ color: 'rgba(245,243,238,0.35)' }}>
               What we witness on pitches, tracks, and courts is only a fraction
-              of the story. Beyond the performance lives the rest of it — the
+              of the story. Beyond the performance lives the rest of it: the
               culture, the quiet struggles, the grit, and the lived experiences
               that shape who these athletes really are.
             </span>{' '}
@@ -115,7 +115,7 @@ export default function Manifesto() {
           >
             We capture emotion through powerful imagery, bring depth through
             long-form writing and editorials, and document journeys through
-            film — preserving the conversations and perspectives that get lost
+            film, preserving the conversations and perspectives that get lost
             in the noise of the moment.
           </p>
         </motion.div>

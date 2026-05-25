@@ -13,7 +13,7 @@ const pillars = [
   {
     number: '02',
     title: 'Africa First',
-    body: 'We tell sport from an African perspective — rooted in its culture, its people, and its realities.',
+    body: 'We tell sport from an African perspective, rooted in its culture, its people, and its realities.',
   },
   {
     number: '03',
