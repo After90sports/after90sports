@@ -47,14 +47,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Remap legacy font variables → Inter */
-:root {
-  --font-oswald: var(--font-inter);
-  --font-barlow: var(--font-inter);
-  --font-barlow-condensed: var(--font-inter);
-  --font-league-gothic: var(--font-inter);
-}
-
 body {
   background-color: var(--black);
   color: var(--white);

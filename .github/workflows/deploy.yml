@@ -1,10 +1,12 @@
-name: Build Check
+name: CI
 
-# Hostinger handles deployment directly via GitHub auto-deployment.
-# This workflow just verifies the build passes on every push.
+# Hostinger auto-deploys from GitHub on every push to main.
+# This workflow verifies the build passes before Hostinger picks it up.
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
 
 jobs:
@@ -12,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22   # matches Hostinger runtime
           cache: npm
 
       - name: Install dependencies

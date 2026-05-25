@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import { Chronicle } from '@/lib/chronicles'
 
 interface Props {
@@ -69,17 +70,15 @@ export default function ChroniclePopup({
       }}
     >
       {/* Header image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={chronicle.image}
-        alt={chronicle.title}
-        style={{
-          width: '100%',
-          aspectRatio: '16/9',
-          objectFit: 'cover',
-          display: 'block',
-        }}
-      />
+      <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9' }}>
+        <Image
+          src={chronicle.image}
+          alt={chronicle.title}
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="340px"
+        />
+      </div>
 
       {/* Close button */}
       <button

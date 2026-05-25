@@ -71,7 +71,7 @@ export default function Nav() {
           className="nav-desktop"
         >
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               className="nav-link"
@@ -92,7 +92,7 @@ export default function Nav() {
               }
             >
               {item.label}
-            </a>
+            </Link>
           ))}
 
           <a
@@ -186,10 +186,11 @@ export default function Nav() {
           }}
         >
           {navItems.map((item, i) => (
-            <a
+            <Link
               key={item.label}
               href={item.href}
               onClick={close}
+              tabIndex={menuOpen ? 0 : -1}
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: 'clamp(28px, 7vw, 44px)',
@@ -210,7 +211,7 @@ export default function Nav() {
               }}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
 
           {/* WATCH CTA */}

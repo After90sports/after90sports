@@ -4,11 +4,15 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'miro.medium.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
         pathname: '/**',
       },
     ],

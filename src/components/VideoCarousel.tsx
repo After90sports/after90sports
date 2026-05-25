@@ -309,6 +309,9 @@ export default function VideoCarousel() {
         button:hover .play-overlay { background: rgba(0,0,0,0.15) !important; }
         button:hover .play-btn { transform: scale(1.08); }
 
+        /* On desktop all 3 videos are visible — controls not needed */
+        @media (min-width: 641px) { .video-controls { display: none !important; } }
+
         @media (max-width: 1024px) {
           .video-section { padding: 40px 0 40px 24px !important; }
           .video-header { padding-right: 24px !important; flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 24px !important; }

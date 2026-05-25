@@ -174,11 +174,6 @@ function PhotoCard({
         </div>
       </div>
 
-      <style>{`
-        .card-accent-line:hover .photo-img {
-          transform: scale(1.05);
-        }
-      `}</style>
     </motion.div>
     </Link>
   )
@@ -243,6 +238,7 @@ export default function Photographs() {
       </div>
 
       <style>{`
+        .card-accent-line:hover .photo-img { transform: scale(1.05); }
         @media (max-width: 1024px) {
           .photographs-section { padding: 40px 24px !important; }
           .photos-grid { grid-template-columns: 1fr !important; grid-template-rows: auto !important; }

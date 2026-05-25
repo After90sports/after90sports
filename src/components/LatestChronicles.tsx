@@ -163,8 +163,11 @@ function ArticleRow({
   }
 
   return (
-    <motion.div
+    <motion.a
       ref={rowRef}
+      href={article.url}
+      target="_blank"
+      rel="noopener noreferrer"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
@@ -181,6 +184,7 @@ function ArticleRow({
         cursor: 'pointer',
         transition: 'padding-left 0.3s ease',
         paddingLeft: isActive ? '24px' : '0px',
+        textDecoration: 'none',
       }}
       className="article-row"
     >
@@ -289,6 +293,6 @@ function ArticleRow({
           →
         </span>
       </div>
-    </motion.div>
+    </motion.a>
   )
 }
