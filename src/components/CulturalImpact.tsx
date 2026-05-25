@@ -66,7 +66,7 @@ export default function CulturalImpact() {
         >
           Rooted in African culture, our lenses, pens, and film are driven by
           the energy and stories that live beyond the game. We are redefining
-          sports storytelling for a new generation of fans — crafting every
+          sports storytelling for a new generation of fans, crafting every
           narrative to connect with the culture, spark conversation, and leave
           a lasting impact.
         </motion.p>
