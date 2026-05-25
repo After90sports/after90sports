@@ -1,11 +1,14 @@
-name: Build & Deploy to Hostinger
+name: Build Check
+
+# Hostinger handles deployment directly via GitHub auto-deployment.
+# This workflow just verifies the build passes on every push.
 
 on:
   push:
     branches: [main]
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,58 +24,5 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static export
+      - name: Build
         run: npm run build
-
-      # ── Step 1: Deploy the Node.js static file server ─────────────────────────
-      # server/app.js is a self-contained HTTP server — no npm install needed.
-      # It serves the Next.js static export from nodejs/public/.
-      - name: Deploy server file to nodejs/
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./server/
-          server-dir: /nodejs/
-          state-name: .ftp-server-sync-state.json
-          exclude: |
-            **/.git*
-            **/.git*/**
-
-      # ── Step 2: Deploy the built static site to nodejs/public/ ────────────────
-      # Media files (images/albums/, hero-bg.mp4) are uploaded manually via
-      # Hostinger File Manager and are excluded here so they are never deleted.
-      - name: Deploy static site to nodejs/public/
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          local-dir: ./out/
-          server-dir: /nodejs/public/
-          state-name: .ftp-deploy-sync-state-v3.json
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/hero-bg.mp4
-            **/images/albums/**
-
-      # ── Step 3: Restart the Node.js app to pick up new files ──────────────────
-      # Non-fatal: a failed restart just means you need to restart manually in
-      # hPanel. It will never block a successful deploy.
-      - name: Restart Node.js app via Hostinger API
-        continue-on-error: true
-        run: |
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
-            --max-time 15 \
-            -X POST "https://api.hostinger.com/v1/hosting/nodejs/restart" \
-            -H "Authorization: Bearer ${{ secrets.HOSTINGER_API_TOKEN }}" \
-            -H "Content-Type: application/json" || echo "000")
-          echo "Hostinger API response: $RESPONSE"
-          if [ "$RESPONSE" = "200" ] || [ "$RESPONSE" = "204" ] || [ "$RESPONSE" = "202" ]; then
-            echo "✅ Node.js app restarted successfully"
-          else
-            echo "⚠️  Auto-restart returned HTTP $RESPONSE"
-            echo "   → Go to hPanel > Node.js > Restart to apply the latest deploy"
-          fi
