@@ -12,7 +12,8 @@ const fs    = require('fs');
 const path  = require('path');
 const zlib  = require('zlib');
 
-const PUBLIC_DIR = path.join(__dirname, 'public');
+// Hostinger auto-deploy builds to ./out/ at repo root; server/ is one level down
+const PUBLIC_DIR = path.join(__dirname, '..', 'out');
 const PORT       = process.env.PORT || 3000;
 
 // MIME types for all file extensions the Next.js build produces
