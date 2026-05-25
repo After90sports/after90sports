@@ -7,7 +7,7 @@ import Image from 'next/image'
 const navItems = [
   { label: 'Photographs',   href: '/#photographs'  },
   { label: 'A90 Chronicles', href: '/#a90chronicles' },
-  { label: 'Our Partners',  href: '/#editions'      },
+  { label: 'Our Partners',  href: '/#partners'      },
   { label: 'About',         href: '/about'          },
 ]
 

@@ -42,7 +42,7 @@ const partners: Partner[] = [
 export default function OurPartners() {
   return (
     <section
-      id="editions"
+      id="partners"
       style={{ padding: '40px 64px', background: 'var(--black)' }}
       className="partners-section"
     >
