@@ -18,10 +18,10 @@ export default function A90Chronicles() {
       {/* Left — Image */}
       <div style={{ position: 'relative', minHeight: '600px' }}>
         <Image
-          src="/IMG_0065.jpg"
-          alt="Nicholas Huys — Athlete of the Month"
+          src="https://miro.medium.com/v2/resize:fit:1200/1*cdX3PgqarMuo3jBRoMfoXA.jpeg"
+          alt="Where Did the Love Go? Ghana and the Premier League Paradox"
           fill
-          style={{ objectFit: 'cover', objectPosition: 'center top' }}
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
           sizes="50vw"
           priority
         />
@@ -32,7 +32,7 @@ export default function A90Chronicles() {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%)',
+              'linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.3) 60%, transparent 100%)',
           }}
         />
 
@@ -57,7 +57,7 @@ export default function A90Chronicles() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              border: '1px solid rgba(255,255,255,0.3)',
+              border: '1px solid rgba(155,222,28,0.4)',
               backdropFilter: 'blur(8px)',
               WebkitBackdropFilter: 'blur(8px)',
               borderRadius: '2px',
@@ -65,14 +65,6 @@ export default function A90Chronicles() {
               marginBottom: '20px',
             }}
           >
-            <svg
-              width="12"
-              height="12"
-              viewBox="0 0 24 24"
-              fill="var(--accent)"
-            >
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
             <span
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
@@ -80,26 +72,27 @@ export default function A90Chronicles() {
                 fontWeight: 900,
                 letterSpacing: '0.3px',
                 textTransform: 'uppercase',
-                color: 'var(--white)',
+                color: 'var(--accent)',
               }}
             >
-              Athlete of the Month
+              Feature · Feb 2026
             </span>
           </div>
 
           <h2
             style={{
               fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: 'clamp(56px, 6.5vw, 96px)',
+              fontSize: 'clamp(32px, 4vw, 60px)',
               fontWeight: 900,
               lineHeight: 1.05,
-              letterSpacing: '-2px',
+              letterSpacing: '-1px',
               textTransform: 'uppercase',
               color: 'var(--white)',
               marginBottom: '10px',
             }}
           >
-            Nicholas Huys
+            Where Did
+            <br />the Love Go?
           </h2>
 
           <p
@@ -112,7 +105,7 @@ export default function A90Chronicles() {
               color: 'rgba(245,243,238,0.55)',
             }}
           >
-            Shot Put · Ivory Coast
+            Ghana · Premier League
           </p>
         </motion.div>
       </div>
@@ -161,7 +154,7 @@ export default function A90Chronicles() {
             marginBottom: '32px',
           }}
         >
-          Power, Precision and Pride for Ivory Coast
+          Ghana and the Premier League Paradox
         </h3>
 
         {/* Quote */}
@@ -178,8 +171,9 @@ export default function A90Chronicles() {
             marginBottom: '32px',
           }}
         >
-          &ldquo;Every throw is a statement — not just for me, but for everyone
-          watching from back home.&rdquo;
+          &ldquo;Something has shifted — the passion is still there, but the
+          love story between Ghana and the Premier League is more complicated
+          than it once was.&rdquo;
         </blockquote>
 
         {/* Body */}
@@ -193,10 +187,10 @@ export default function A90Chronicles() {
             marginBottom: '48px',
           }}
         >
-          We caught up with Nicholas Huys ahead of his most important season
-          yet. What emerged was a portrait of an athlete driven not just by
-          competition, but by the weight of representing a nation on the world
-          stage.
+          Ghana has long been known, and rightly so, as a football nation. When
+          people make this claim, they are often referring to the passion that
+          spills out of communities, living rooms, and viewing centres on match
+          days. Yet something has shifted.
         </p>
 
         {/* Stats */}
@@ -211,9 +205,9 @@ export default function A90Chronicles() {
           }}
         >
           {[
-            { num: '21.4m', label: 'Personal Best' },
-            { num: '3×', label: 'National Champion' },
-            { num: 'Top 5', label: 'World Ranking' },
+            { num: 'Feature', label: 'Category' },
+            { num: 'Feb 2026', label: 'Published' },
+            { num: 'Medium', label: 'Read On' },
           ].map((s) => (
             <div key={s.label}>
               <div
@@ -248,7 +242,7 @@ export default function A90Chronicles() {
 
         {/* Button */}
         <a
-          href="https://medium.com/@afterninetygh"
+          href="https://medium.com/@afterninetygh/where-did-the-love-go-ghana-and-the-premier-league-paradox-438accfa7ea0"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-arrow"
