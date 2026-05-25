@@ -104,20 +104,6 @@ export default function Manifesto() {
           }}
           className="manifesto-grid"
         >
-          <p
-            style={{
-              fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: '16px',
-              fontWeight: 500,
-              lineHeight: 1.5,
-              color: 'rgba(245,243,238,0.55)',
-            }}
-          >
-            We capture emotion through powerful imagery, bring depth through
-            long-form writing and editorials, and document journeys through
-            film, preserving the conversations and perspectives that get lost
-            in the noise of the moment.
-          </p>
         </motion.div>
       </div>
 
