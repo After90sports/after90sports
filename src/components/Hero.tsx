@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 const ease = [0.22, 1, 0.36, 1] as const
@@ -28,9 +29,6 @@ function FadeUp({
   )
 }
 
-const YT_ID = 'bclsHKzj7sk'
-const YT_THUMB = `https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`
-
 export default function Hero() {
   return (
     <section
@@ -41,29 +39,16 @@ export default function Hero() {
         minHeight: '640px',
         overflow: 'hidden',
         background: 'var(--black)',
-        // Thumbnail shows instantly — no black flash while iframe loads
-        backgroundImage: `url(${YT_THUMB})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
       }}
     >
-      {/* YouTube iframe — autoplays muted on top of the thumbnail */}
-      <iframe
-        title="After90 hero background"
-        src={`https://www.youtube-nocookie.com/embed/${YT_ID}?autoplay=1&mute=1&loop=1&playlist=${YT_ID}&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1&iv_load_policy=3&enablejsapi=0`}
-        allow="autoplay; encrypted-media"
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: '177.78vh',
-          height: '100vh',
-          minWidth: '100%',
-          minHeight: '56.25vw',
-          transform: 'translate(-50%, -50%)',
-          border: 'none',
-          pointerEvents: 'none',
-        }}
+      {/* Hero image */}
+      <Image
+        src="/images/New Hero.jpg"
+        alt="After90 hero"
+        fill
+        priority
+        style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+        sizes="100vw"
       />
 
       {/* Dark overlay */}
