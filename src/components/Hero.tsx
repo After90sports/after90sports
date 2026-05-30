@@ -78,10 +78,10 @@ export default function Hero() {
         <FadeUp delay={0.35} style={{ marginBottom: '28px' }} className="hero-headline">
           <h1
             style={{
-              fontFamily: 'var(--font-inter), sans-serif',
-              fontSize: 'clamp(32px, 4vw, 56px)',
+              fontFamily: "'Big Shoulders Display', sans-serif",
+              fontSize: 'clamp(64px, 10vw, 160px)',
               fontWeight: 900,
-              lineHeight: 1.08,
+              lineHeight: 0.95,
               letterSpacing: '-1px',
               textTransform: 'uppercase',
               color: 'var(--white)',
@@ -121,7 +121,7 @@ export default function Hero() {
         }
         @media (max-width: 480px) {
           .hero-content { padding: 0 20px 64px !important; }
-          .hero-content h1 { font-size: clamp(28px, 7vw, 40px) !important; letter-spacing: -0.5px !important; line-height: 1.08 !important; }
+          .hero-content h1 { font-size: clamp(52px, 14vw, 80px) !important; letter-spacing: -0.5px !important; line-height: 0.95 !important; }
           .hero-content p { font-size: 14px !important; line-height: 1.7 !important; max-width: 100% !important; }
         }
       `}</style>
