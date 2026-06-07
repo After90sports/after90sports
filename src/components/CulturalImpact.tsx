@@ -139,7 +139,7 @@ export default function CulturalImpact() {
         }}
       >
         <a
-          href="#newsletter"
+          href="mailto:reach@afterninetysports.com"
           className="btn-arrow"
           style={{
             display: 'inline-flex',

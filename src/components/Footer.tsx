@@ -150,10 +150,14 @@ export default function Footer() {
         </p>
 
         <div style={{ display: 'flex', gap: '24px' }}>
-          {['Privacy', 'Terms', 'Cookies'].map((item) => (
+          {[
+            { label: 'Privacy', href: '/privacy' },
+            { label: 'Terms', href: '/terms' },
+            { label: 'Cookies', href: '/cookies' },
+          ].map((item) => (
             <a
-              key={item}
-              href="#"
+              key={item.label}
+              href={item.href}
               style={{
                 fontFamily: 'var(--font-inter), sans-serif',
                 fontSize: '12px',
@@ -169,7 +173,7 @@ export default function Footer() {
                 ((e.currentTarget as HTMLAnchorElement).style.color = 'rgba(245,243,238,0.3)')
               }
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>
