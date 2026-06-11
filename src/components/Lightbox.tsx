@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useCallback, useState } from 'react'
+import Image from 'next/image'
 
 interface Props {
   photos: { src: string; caption?: string }[]
@@ -120,11 +121,8 @@ export default function Lightbox({ photos, startIndex, onClose }: Props) {
         onClick={(e) => e.stopPropagation()}
         style={{
           position: 'relative',
-          maxWidth: '90vw',
-          maxHeight: '80vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: '90vw',
+          height: '80vh',
         }}
       >
         {/* Loading skeleton */}
@@ -135,23 +133,20 @@ export default function Lightbox({ photos, startIndex, onClose }: Props) {
               inset: 0,
               background: 'rgba(255,255,255,0.04)',
               borderRadius: '2px',
-              minWidth: '200px',
-              minHeight: '150px',
             }}
           />
         )}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           key={photo.src}
           src={photo.src}
           alt={photo.caption ?? 'After90 photograph'}
+          fill
+          sizes="90vw"
+          quality={85}
           onLoad={() => setLoaded(true)}
           style={{
-            maxWidth: '90vw',
-            maxHeight: '80vh',
             objectFit: 'contain',
             borderRadius: '2px',
-            display: 'block',
             opacity: loaded ? 1 : 0,
             transition: 'opacity 0.25s ease',
           }}
