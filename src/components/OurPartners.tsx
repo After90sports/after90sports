@@ -27,13 +27,13 @@ type Partner = {
  *
  * displayH is tuned so each logo has similar visual weight despite very
  * different aspect ratios:
- *  - EW   3304×3840  (portrait 0.86:1) →  72 px tall,  ~62 px wide  — actual colour
+ *  - EW   344×400    (portrait 0.86:1) →  72 px tall,  ~62 px wide  — actual colour
  *  - A2026 300×251   (sq-ish  1.20:1) →  60 px tall,  ~72 px wide  — white
  *  - 3sme 1214×276   (wide    4.40:1) →  32 px tall, ~141 px wide  — white
  *  - Deca  450×450   (square  1.00:1) → 102 px tall, ~102 px wide  — actual colour
  */
 const partners: Partner[] = [
-  { name: 'Eleven Wonders FC', logo: '/images/partners/eleven-wonders-fc.png', w: 3304, h: 3840, displayH: 72,  white: false },
+  { name: 'Eleven Wonders FC', logo: '/images/partners/eleven-wonders-fc.png', w: 344,  h: 400,  displayH: 72,  white: false },
   { name: 'Accra 2026',        logo: '/images/partners/accra-2026.png',         w: 300,  h: 251,  displayH: 60,  white: true  },
   { name: '3sme',              logo: '/images/partners/3sme.png',               w: 1214, h: 276,  displayH: 32,  white: true  },
   { name: 'Decathlon',         logo: '/images/partners/decathlon.png',          w: 450,  h: 450,  displayH: 204, white: false },

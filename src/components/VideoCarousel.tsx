@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useSyncExternalStore } from 'react'
 import { motion } from 'framer-motion'
 
 const videos = [
@@ -78,17 +78,23 @@ function VideoSlide({ video }: { video: typeof videos[0] }) {
   )
 }
 
+function subscribeToMobileQuery(callback: () => void) {
+  const mq = window.matchMedia('(max-width: 640px)')
+  mq.addEventListener('change', callback)
+  return () => mq.removeEventListener('change', callback)
+}
+
+function getIsMobile() {
+  return window.matchMedia('(max-width: 640px)').matches
+}
+
+function getIsMobileServer() {
+  return false
+}
+
 export default function VideoCarousel() {
   const [current, setCurrent] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 640px)')
-    setIsMobile(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
+  const isMobile = useSyncExternalStore(subscribeToMobileQuery, getIsMobile, getIsMobileServer)
 
   const prev = () => setCurrent((c) => Math.max(0, c - 1))
   const next = () => setCurrent((c) => Math.min(videos.length - 1, c + 1))

@@ -20,6 +20,9 @@ export async function generateMetadata(
   return {
     title: `${album.title} — After90 Photographs`,
     description: `${album.photos.length} photo${album.photos.length !== 1 ? 's' : ''} from ${album.title} — ${album.location}, ${album.date}. Photographed by Husseni Shamsudeen for After90.`,
+    alternates: {
+      canonical: `/albums/${album.slug}`,
+    },
     openGraph: {
       title: `${album.title} — After90`,
       description: `${album.location} · ${album.date}`,
