@@ -12,7 +12,7 @@ const contactInfo = [
 const socialLinks = [
   { label: 'Instagram', href: 'https://www.instagram.com/after90sports/', Icon: InstagramIcon },
   { label: 'X / Twitter', href: 'https://x.com/after90sports', Icon: XTwitterIcon },
-  { label: 'TikTok', href: 'https://www.tiktok.com/@after9012', Icon: TikTokIcon },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@after90sports', Icon: TikTokIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@after90', Icon: YouTubeIcon },
   { label: 'Medium', href: 'https://medium.com/@afterninetygh', Icon: MediumIcon },
 ]
