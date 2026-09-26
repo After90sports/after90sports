@@ -5,18 +5,18 @@ import { motion } from 'framer-motion'
 
 const videos = [
   {
+    id: '5O8wKj0KgSM',
+    src: 'https://www.youtube.com/embed/5O8wKj0KgSM?autoplay=1&rel=0&modestbranding=1',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+  },
+  {
+    id: 'aqcCRAMPTfw',
+    src: 'https://www.youtube.com/embed/aqcCRAMPTfw?autoplay=1&rel=0&modestbranding=1',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+  },
+  {
     id: 'A0i8ZspYpWY',
     src: 'https://www.youtube.com/embed/A0i8ZspYpWY?autoplay=1&rel=0&modestbranding=1',
-    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-  },
-  {
-    id: 'bDY7klbL2GQ',
-    src: 'https://www.youtube.com/embed/bDY7klbL2GQ?autoplay=1&rel=0&modestbranding=1',
-    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-  },
-  {
-    id: 'VDax3AXMIbs',
-    src: 'https://www.youtube.com/embed/VDax3AXMIbs?autoplay=1&start=12&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
 ]
