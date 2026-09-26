@@ -64,10 +64,10 @@ export default function Footer() {
         {/* Col 1 — Logo only */}
         <div>
           <Image
-            src="/images/after90-icon.png"
+            src="/images/after90-logo.png"
             alt="After90"
-            width={280}
-            height={91}
+            width={1330}
+            height={265}
             className="footer-logo"
             style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '48px' }}
           />

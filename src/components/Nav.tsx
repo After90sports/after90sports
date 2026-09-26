@@ -55,10 +55,10 @@ export default function Nav() {
         {/* Logo */}
         <Link href="/" onClick={close} style={{ display: 'inline-flex', alignItems: 'center' }}>
           <Image
-            src="/images/after90-icon.png"
+            src="/images/after90-logo.png"
             alt="After90"
-            width={160}
-            height={52}
+            width={1330}
+            height={265}
             className="nav-logo"
             style={{ filter: 'brightness(0) invert(1)', objectFit: 'contain', width: 'auto', height: '44px' }}
             priority
