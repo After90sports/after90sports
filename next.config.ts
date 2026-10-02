@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   poweredByHeader: false,
   images: {
+    unoptimized: true,
     qualities: [75, 85],
     remotePatterns: [
       {
