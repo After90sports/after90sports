@@ -5,6 +5,11 @@ import { motion } from 'framer-motion'
 
 const videos = [
   {
+    id: 'TP_GQbBZI2o',
+    src: 'https://www.youtube.com/embed/TP_GQbBZI2o?autoplay=1&rel=0&modestbranding=1',
+    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+  },
+  {
     id: '5O8wKj0KgSM',
     src: 'https://www.youtube.com/embed/5O8wKj0KgSM?autoplay=1&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
@@ -12,11 +17,6 @@ const videos = [
   {
     id: 'aqcCRAMPTfw',
     src: 'https://www.youtube.com/embed/aqcCRAMPTfw?autoplay=1&rel=0&modestbranding=1',
-    allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
-  },
-  {
-    id: 'A0i8ZspYpWY',
-    src: 'https://www.youtube.com/embed/A0i8ZspYpWY?autoplay=1&rel=0&modestbranding=1',
     allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
   },
 ]
