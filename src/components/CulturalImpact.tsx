@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 
 const stats = [
-  { number: '15', label: 'Monthly Readers' },
+  { number: '15K', label: 'Monthly Readers' },
   { number: '4', label: 'Published Stories' },
   { number: '4', label: 'Countries Reached' },
   { number: '5K+', label: 'Accumulated Views' },
@@ -77,6 +77,7 @@ export default function CulturalImpact() {
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
+          columnGap: '40px',
         }}
         className="stats-grid"
       >
