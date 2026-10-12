@@ -38,7 +38,13 @@ export default function Hero() {
     const video = videoRef.current
     if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     video.muted = true
-    video.play().catch(() => {})
+    const play = () => video.play().catch(() => {})
+    play()
+
+    // Browsers pause background-tab video and don't resume it on their own.
+    const onVisible = () => { if (document.visibilityState === 'visible') play() }
+    document.addEventListener('visibilitychange', onVisible)
+    return () => document.removeEventListener('visibilitychange', onVisible)
   }, [])
 
   return (
