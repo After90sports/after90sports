@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const stats = [
   { number: '15', label: 'Monthly Readers' },
-  { number: '3', label: 'Published Stories' },
+  { number: '4', label: 'Published Stories' },
   { number: '4', label: 'Countries Reached' },
   { number: '5K+', label: 'Accumulated Views' },
 ]
@@ -82,7 +82,7 @@ export default function CulturalImpact() {
       >
         {stats.map((stat, i) => (
           <motion.div
-            key={stat.number}
+            key={stat.label}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.1 }}
