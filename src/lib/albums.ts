@@ -286,8 +286,8 @@ export const albums: Album[] = [
     slug: 'fifa-arab-cup',
     title: 'FIFA Arab Cup',
     tag: 'FIFA Arab Cup',
-    date: '2024',
-    location: 'UAE',
+    date: 'December 2025',
+    location: 'Qatar',
     coverImage: '/UAEMOROC-13.jpg',
     photos: [
       { filename: 'DSC06921.jpg' },

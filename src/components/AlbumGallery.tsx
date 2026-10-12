@@ -60,7 +60,7 @@ export default function AlbumGallery({ photos }: { photos: GalleryPhoto[] }) {
             className="album-thumb"
           >
             <Image
-              src={photo.src}
+              src={`${photo.src}?size=thumb`}
               alt={photo.caption ?? `Photo ${i + 1}`}
               fill
               style={{
