@@ -18,8 +18,8 @@ export default function A90Chronicles() {
       {/* Left — Image */}
       <div style={{ position: 'relative', minHeight: '600px' }}>
         <Image
-          src="https://miro.medium.com/v2/resize:fit:1200/1*cdX3PgqarMuo3jBRoMfoXA.jpeg"
-          alt="Where Did the Love Go? Ghana and the Premier League Paradox"
+          src="https://miro.medium.com/v2/resize:fit:1200/1*xkYWDWmTBXwoQQRkRZLntQ.jpeg"
+          alt="Hamidou Fatah on the ball for Ghana's Black Stars"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           sizes="50vw"
@@ -75,7 +75,7 @@ export default function A90Chronicles() {
                 color: 'var(--accent)',
               }}
             >
-              Feature · Feb 2026
+              Feature · Aug 2026
             </span>
           </div>
 
@@ -91,8 +91,8 @@ export default function A90Chronicles() {
               marginBottom: '10px',
             }}
           >
-            Where Did
-            <br />the Love Go?
+            From a Village
+            <br />Called Ejura
           </h2>
 
           <p
@@ -105,7 +105,7 @@ export default function A90Chronicles() {
               color: 'rgba(245,243,238,0.55)',
             }}
           >
-            Ghana · Premier League
+            Ejura · Black Stars
           </p>
         </motion.div>
       </div>
@@ -154,7 +154,7 @@ export default function A90Chronicles() {
             marginBottom: '32px',
           }}
         >
-          Ghana and the Premier League Paradox
+          The Full Story of Hamidou &ldquo;Maestro&rdquo; Fatah
         </h3>
 
         {/* Quote */}
@@ -171,9 +171,8 @@ export default function A90Chronicles() {
             marginBottom: '32px',
           }}
         >
-          &ldquo;Something has shifted — the passion is still there, but the
-          love story between Ghana and the Premier League is more complicated
-          than it once was.&rdquo;
+          &ldquo;Before you achieve something, you need to pass through all of
+          these things. It&rsquo;s life.&rdquo;
         </blockquote>
 
         {/* Body */}
@@ -187,10 +186,11 @@ export default function A90Chronicles() {
             marginBottom: '48px',
           }}
         >
-          Ghana has long been known, and rightly so, as a football nation. When
-          people make this claim, they are often referring to the passion that
-          spills out of communities, living rooms, and viewing centres on match
-          days. Yet something has shifted.
+          There is a good chance you are meeting Hamidou Fatah for the first
+          time in this story, and if that is the case, good. That is exactly
+          how it should be. This is not a piece for the people who already know
+          him from the Ghana Premier League highlight reels or the Black Stars
+          team sheet.
         </p>
 
         {/* Stats */}
@@ -206,7 +206,7 @@ export default function A90Chronicles() {
         >
           {[
             { num: 'Feature', label: 'Category' },
-            { num: 'Feb 2026', label: 'Published' },
+            { num: 'Aug 2026', label: 'Published' },
             { num: 'Medium', label: 'Read On' },
           ].map((s) => (
             <div key={s.label}>
@@ -242,7 +242,7 @@ export default function A90Chronicles() {
 
         {/* Button */}
         <a
-          href="https://medium.com/@afterninetygh/where-did-the-love-go-ghana-and-the-premier-league-paradox-438accfa7ea0"
+          href="https://medium.com/@afterninetygh/from-a-village-called-ejura-the-full-story-of-hamidou-maestro-fatah-f00832dbe50e"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-arrow"

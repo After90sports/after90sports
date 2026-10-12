@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -30,6 +31,16 @@ function FadeUp({
 }
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  // React sets `muted` as a property, not an attribute, so browsers can refuse autoplay; start it explicitly.
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    video.muted = true
+    video.play().catch(() => {})
+  }, [])
+
   return (
     <section
       style={{
@@ -41,14 +52,28 @@ export default function Hero() {
         background: 'var(--black)',
       }}
     >
-      {/* Hero image */}
+      {/* Still frame: shows while the video loads and for reduced-motion users */}
       <Image
-        src="/images/New Hero.jpg"
-        alt="After90 hero"
+        src="/videos/hero-roots-ep03-poster.jpg"
+        alt=""
         fill
         priority
-        style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
+        style={{ objectFit: 'cover' }}
         sizes="100vw"
+      />
+
+      <video
+        ref={videoRef}
+        src="/videos/hero-roots-ep03.mp4"
+        poster="/videos/hero-roots-ep03-poster.jpg"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        className="hero-video"
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
       />
 
       {/* Dark overlay */}
@@ -114,6 +139,9 @@ export default function Hero() {
       </div>
 
       <style>{`
+        @media (prefers-reduced-motion: reduce) {
+          .hero-video { display: none; }
+        }
         @media (max-width: 768px) {
           .hero-content { padding: 0 24px 72px !important; max-width: 100% !important; }
 .hero-headline { margin-bottom: 20px !important; }
